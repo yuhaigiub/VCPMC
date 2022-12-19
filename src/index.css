@@ -1,0 +1,16 @@
+:root {
+	--background-black: #1e1e2e;
+	--menu-background: #020220;
+	--border-background: rgba(47, 47, 65, 0.7);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background-color: aqua;
+}
