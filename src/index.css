@@ -1,7 +1,12 @@
 :root {
 	--background-black: #1e1e2e;
 	--menu-background: #020220;
-	--border-background: rgba(47, 47, 65, 0.7);
+	--table-background: rgba(47, 47, 65, 0.7);
+	--text-orange: #ff7506;
+	--menu-width: calc(100vw / 24 * 2);
+	--container-padding-top: 4rem;
+	--container-padding-right: 4.5rem;
+	--container-padding-left: 2rem;
 }
 
 *,
@@ -12,5 +17,14 @@
 
 body {
 	margin: 0;
-	background-color: aqua;
+}
+
+.ant-table-pagination {
+	margin: 0 !important;
+	padding: 0.5em 0;
+	background-color: var(--table-background);
+}
+
+.ant-pagination-item-active {
+	border: none !important;
 }

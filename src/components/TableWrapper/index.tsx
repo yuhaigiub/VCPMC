@@ -1,13 +1,17 @@
 import React from "react";
 
-import { Table, Pagination, ConfigProvider } from "antd";
+import { Table, ConfigProvider } from "antd";
 
 import type { ColumnsType } from "antd/es/table";
+import style from "./TableWrapper.module.css";
 
 const TableWrapper = () => {
 	return (
 		<ConfigProvider
 			theme={{
+				token: {
+					// colorPrimary: "#fff",
+				},
 				components: {
 					Table: {
 						colorText: "#fff",
@@ -17,10 +21,26 @@ const TableWrapper = () => {
 						fontSize: 14,
 						lineHeight: 0.8,
 					},
-					Pagination: {},
+					Pagination: {
+						colorPrimary: "#f5f5ff",
+						colorPrimaryBorder: "#000",
+						colorText: "#f5f5ff",
+						colorTextDisabled: "#f5f5ff",
+						colorBgContainer: "rgba(255, 117, 6, 0.5)",
+						colorPrimaryHover: "#121212",
+						colorBgTextHover: "#121212",
+						borderRadius: 20,
+					},
 				},
 			}}>
-			<Table columns={columns} dataSource={dataSource} pagination={{ pageSize: 9 }} />
+			<Table
+				columns={columns}
+				dataSource={dataSource}
+				scroll={{ x: 5 }}
+				pagination={{
+					pageSize: 9,
+				}}
+			/>
 		</ConfigProvider>
 	);
 };

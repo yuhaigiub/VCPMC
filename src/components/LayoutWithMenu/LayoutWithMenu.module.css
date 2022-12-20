@@ -1,0 +1,13 @@
+.container {
+	height: 100vh;
+	background-color: var(--background-black);
+}
+
+.contentContainer {
+	height: 100%;
+	padding-top: var(--container-padding-top);
+	padding-right: var(--container-padding-right);
+	padding-left: var(--container-padding-left);
+	overflow: auto;
+}
+

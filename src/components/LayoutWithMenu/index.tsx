@@ -2,23 +2,18 @@ import React from "react";
 import { Col, Row } from "antd";
 
 import TableWrapper from "../TableWrapper";
+import style from "./LayoutWithMenu.module.css";
 
-const Layout = () => {
+const LayoutWithMenu: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
 	return (
 		<>
-			<Row style={{ height: "100vh", backgroundColor: "var(--background-black)" }}>
+			<Row className={style.container}>
 				<Col span={2}>
 					<div style={{ height: "100%", background: "var(--menu-background)", color: "white" }}>
 						Menu
 					</div>
 				</Col>
-				<Col
-					span={22}
-					style={{
-						height: "100%",
-						padding: "3em 5em 6em 5em",
-						overflow: "auto",
-					}}>
+				<Col className={style.contentContainer} span={22}>
 					<h1 style={{ margin: 0, color: "white" }}>Hello World</h1>
 					<TableWrapper />
 				</Col>
@@ -27,4 +22,4 @@ const Layout = () => {
 	);
 };
 
-export default Layout;
+export default LayoutWithMenu;

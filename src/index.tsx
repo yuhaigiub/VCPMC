@@ -8,7 +8,7 @@ import App from "./App";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<React.StrictMode>
-		<ConfigProvider>
+		<ConfigProvider theme={{}}>
 			<App />
 		</ConfigProvider>
 	</React.StrictMode>
