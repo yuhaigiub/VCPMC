@@ -1,8 +1,9 @@
 import React from "react";
 import { Col, Row } from "antd";
+import { Outlet } from 'react-router-dom';
 
-import TableWrapper from "../TableWrapper";
 import style from "./LayoutWithMenu.module.css";
+
 
 const LayoutWithMenu: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
 	return (
@@ -14,8 +15,7 @@ const LayoutWithMenu: React.FC<{ children?: React.ReactNode }> = ({ children }) 
 					</div>
 				</Col>
 				<Col className={style.contentContainer} span={22}>
-					<h1 style={{ margin: 0, color: "white" }}>Hello World</h1>
-					<TableWrapper />
+					<Outlet />
 				</Col>
 			</Row>
 		</>
