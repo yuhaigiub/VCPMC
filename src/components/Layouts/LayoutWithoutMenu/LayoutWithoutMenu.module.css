@@ -19,7 +19,7 @@
 	width: calc(var(--menu-width) + var(--arrow-width));
 	height: 100%;
 	display: grid;
-	grid-template-columns: auto var(--arrow-width);
+	grid-template-columns: var(--menu-width) var(--arrow-width);
 	font-weight: 700;
 	transition: left 250ms ease;
 }
