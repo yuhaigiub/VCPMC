@@ -6,9 +6,11 @@ import style from "./QuickButtonGroup.module.css";
 const QuickButtonGroup = () => {
 	return (
 		<div className={style.container}>
-			{items.map((item) => {
-				return <QuickButton description={item.description} />;
-			})}
+			<div className={style.group}>
+				{items.map((item) => {
+					return <QuickButton description={item.description} />;
+				})}
+			</div>
 		</div>
 	);
 };
