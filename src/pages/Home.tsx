@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import { Navigate } from "react-router-dom";
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+	return <Navigate to="profile" />;
+};
 
-export default Home
+export default Home;
