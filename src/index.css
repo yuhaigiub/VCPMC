@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 :root {
 	--background-black: #1e1e2e;
 	--menu-background: #020220;
@@ -5,14 +7,17 @@
 	--text-orange: #ff7506;
 	--menu-width: calc(100vw / 24 * 2);
 	--container-padding-top: 4rem;
-	--container-padding-right: 4.5rem;
-	--container-padding-left: 2rem;
+	--container-padding-right: 6rem;
+	--container-padding-left: 1rem;
+	--container-padding-bottom: 2rem;
+	--border-radius: 3px;
 }
 
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
+	font-family: "Montserrat" !important;
 }
 
 body {
@@ -27,4 +32,14 @@ body {
 
 .ant-pagination-item-active {
 	border: none !important;
+}
+
+.ant-menu-item-selected::before,
+.ant-menu-submenu-selected .ant-menu-submenu-title::before {
+	content: "";
+	height: 100%;
+	background-color: var(--text-orange);
+	width: 3px;
+	position: absolute;
+	left: 0;
 }
