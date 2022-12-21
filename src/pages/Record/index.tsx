@@ -2,7 +2,7 @@ import React from "react";
 import LayoutContent from "../../components/Layouts/LayoutContent";
 import QuickButtonGroup from "../../components/QuickButtonGroup";
 
-const Records = () => {
+const RecordPage = () => {
 	return (
 		<LayoutContent>
 			<QuickButtonGroup />
@@ -11,4 +11,4 @@ const Records = () => {
 	);
 };
 
-export default Records;
+export default RecordPage;
