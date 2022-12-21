@@ -1,0 +1,23 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	width: calc(var(--container-padding-right) - 1rem);
+	max-height: 8rem;
+	border-radius: var(--border-radius) 0 0 var(--border-radius);
+	background-color: pink;
+	padding: 0.5em;
+	text-align: center;
+	font-size: 0.8rem;
+	font-weight: 600;
+	overflow: hidden;
+}
+
+.icon {
+	width: 60%;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	background-color: yellow;
+}
