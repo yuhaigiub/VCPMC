@@ -8,7 +8,7 @@ const QuickButtonGroup = () => {
 		<div className={style.container}>
 			<div className={style.group}>
 				{items.map((item) => {
-					return <QuickButton description={item.description} />;
+					return <QuickButton key={item.description} description={item.description} />;
 				})}
 			</div>
 		</div>
