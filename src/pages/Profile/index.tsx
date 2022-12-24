@@ -1,22 +1,10 @@
 import React from "react";
-import BreadcrumbWrapper from "../../components/BreadcrumbWrapper";
-import LayoutContent from "../../components/Layouts/NonPage/LayoutContent";
-import LayoutContentInner from "../../components/Layouts/NonPage/LayoutContentInner";
-import QuickButtonGroup from "../../components/QuickButtonGroup";
+import style from "./ProfilePage.module.css";
 
-import commonStyle from "../pageLayout.module.css";
+import LayoutPage from "../../components/Layouts/Page/LayoutPage";
 
 const ProfilePage = () => {
-	return (
-		<LayoutContent>
-			<QuickButtonGroup />
-			<LayoutContentInner>
-				<BreadcrumbWrapper />
-				<div className={commonStyle.heading}>Thông tin cơ bản</div>
-				<div className={commonStyle.content}></div>
-			</LayoutContentInner>
-		</LayoutContent>
-	);
+	return <LayoutPage></LayoutPage>;
 };
 
 export default ProfilePage;

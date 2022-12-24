@@ -21,6 +21,7 @@
 	padding-right: calc(0.5 * var(--container-padding-right));
 	gap: 1rem;
 }
+
 .language {
 	width: 130px;
 	height: 100%;

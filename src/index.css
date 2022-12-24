@@ -25,6 +25,18 @@ body {
 	margin: 0;
 }
 
+.ant-table {
+	border-radius: 0px !important;
+}
+
+.ant-table-thead > tr > :where(th:first-child) {
+	border-start-start-radius: 15px !important;
+}
+
+.ant-table-thead > tr > :where(th:last-child) {
+	border-start-end-radius: 15px !important;
+}
+
 .ant-table-pagination {
 	margin: 0 !important;
 	padding: 0.5em 0;
