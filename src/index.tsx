@@ -14,6 +14,16 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 					token: {
 						colorPrimary: "#FF7506",
 					},
+					components: {
+						Select: {
+							colorBgContainer: "rgba(47, 47, 65, 0.7)",
+							colorBorder: "rgb(67, 67, 79)",
+						},
+						Input: {
+							colorBgContainer: "rgba(47, 47, 65, 0.7)",
+							colorBorder: "rgb(67, 67, 79)",
+						},
+					},
 				}}>
 				<App />
 			</ConfigProvider>

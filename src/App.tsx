@@ -1,11 +1,9 @@
 import React from "react";
 
 import { Routes, Route } from "react-router-dom";
-import LayoutWithMenu from "./components/Layouts/LayoutWithMenu";
-import LayoutWithoutMenu from "./components/Layouts/LayoutWithoutMenu";
-import TableWrapper from "./components/TableWrapper";
+
 import Home from "./pages/Home";
-import Records from "./pages/Record";
+import ContractRoute from "./routes/Contract";
 import PlaylistRoute from "./routes/Playlist";
 import ProfileRoute from "./routes/Profile";
 import RecordRoute from "./routes/Record";
@@ -20,7 +18,7 @@ const App = () => {
 				<Route path="playlist/*" element={<PlaylistRoute />} />
 				<Route path="schedule/*"></Route>
 				<Route path="manage/*">
-					<Route path="contract" />
+					<Route path="contract/*" element={<ContractRoute />} />
 					<Route path="device" />
 					<Route path="user" />
 					<Route path="company" />
