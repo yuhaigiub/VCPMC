@@ -1,5 +1,5 @@
 import React from "react";
-import LayoutContent from "../../components/Layouts/LayoutContent";
+import LayoutContent from "../../components/Layouts/NonPage/LayoutContent";
 import QuickButtonGroup from "../../components/QuickButtonGroup";
 
 const RecordPage = () => {

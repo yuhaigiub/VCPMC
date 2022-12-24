@@ -3,10 +3,9 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 
 import style from "./LayoutWithMenu.module.css";
-import MenuWrapper from "../../MenuWrapper";
-import FloatButtonWrapper from "../../QuickButtonGroup/QuickButton";
+import MenuWrapper from "../../../MenuWrapper";
 
-const LayoutWithMenu: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+const LayoutWithMenu: React.FC = () => {
 	return (
 		<>
 			<div className={style.container}>

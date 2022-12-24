@@ -4,9 +4,9 @@ import style from "./LayoutWithoutMenu.module.css";
 import { Row, Col } from "antd";
 import { Outlet } from "react-router-dom";
 
-import MenuWrapper from "../../MenuWrapper";
+import MenuWrapper from "../../../MenuWrapper";
 
-const LayoutWithoutMenu: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+const LayoutWithoutMenu: React.FC = () => {
 	const menuContainerRef = useRef<HTMLDivElement>(null);
 	const arrowRef = useRef<HTMLDivElement>(null);
 

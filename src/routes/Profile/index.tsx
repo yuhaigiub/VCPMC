@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import LayoutWithMenu from "../../components/Layouts/LayoutWithMenu";
+import LayoutWithMenu from "../../components/Layouts/NonPage/LayoutWithMenu";
 import ProfilePage from "../../pages/Profile";
 
 const ProfileRoute = () => {
