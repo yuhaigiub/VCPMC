@@ -3,7 +3,8 @@
 	font-size: var(--heading-font-size);
 	font-weight: 700;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
+	/* background-color: aqua; */
 	overflow: hidden;
 }
 

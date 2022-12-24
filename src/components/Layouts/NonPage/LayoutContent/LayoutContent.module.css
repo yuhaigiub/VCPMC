@@ -14,9 +14,11 @@
 	position: absolute;
 	top: 0;
 	right: 0;
-	padding: 1rem 0;
+	padding: 1rem 0 0;
 	z-index: 1000;
 	display: flex;
+	align-items: flex-end;
+	/* background-color: aquamarine; */
 	justify-content: flex-end;
 	padding-right: calc(0.5 * var(--container-padding-right));
 	gap: 1rem;

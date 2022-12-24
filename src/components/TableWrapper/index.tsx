@@ -5,7 +5,7 @@ import { Table, ConfigProvider } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import style from "./TableWrapper.module.css";
 
-const TableWrapper = () => {
+const TableWrapper: React.FC<Props> = ({ maxRow = 9 }) => {
 	return (
 		<ConfigProvider
 			theme={{
@@ -26,9 +26,9 @@ const TableWrapper = () => {
 						colorPrimaryBorder: "#000",
 						colorText: "#f5f5ff",
 						colorTextDisabled: "#f5f5ff",
-						colorBgContainer: "rgba(255, 117, 6, 0.5)",
-						colorPrimaryHover: "#121212",
-						colorBgTextHover: "#121212",
+						colorBgContainer: "#ff7506",
+						colorPrimaryHover: "#fefefe",
+						colorBgTextHover: "#686868",
 						borderRadius: 20,
 					},
 				},
@@ -38,7 +38,7 @@ const TableWrapper = () => {
 				dataSource={dataSource}
 				scroll={{ x: 5 }}
 				pagination={{
-					pageSize: 9,
+					pageSize: maxRow,
 				}}
 			/>
 		</ConfigProvider>
@@ -46,6 +46,10 @@ const TableWrapper = () => {
 };
 
 export default TableWrapper;
+
+interface Props {
+	maxRow?: number;
+}
 
 interface DataType {
 	key: string;
