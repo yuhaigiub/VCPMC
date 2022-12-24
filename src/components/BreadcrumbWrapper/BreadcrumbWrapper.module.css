@@ -1,0 +1,28 @@
+.container {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+
+.itemContainer {
+	display: flex;
+	align-items: center;
+	line-height: 1.2;
+	gap: 0.5em;
+}
+
+.text {
+	cursor: pointer;
+	color: white;
+	transition: scale 150ms ease;
+}
+
+.text:hover {
+	scale: 1.05;
+}
+
+.separator {
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: var(--text-orange);
+}
