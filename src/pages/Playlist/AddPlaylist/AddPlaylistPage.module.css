@@ -7,28 +7,33 @@
 }
 
 .containerLeft {
-	--text-box-bg: #535353;
-	--text-box-outline-color: #dedede;
+	--text-box-bg: rgba(47, 47, 65, 0.7);
+	--text-box-outline-color: var(--text-orange);
 	--border-radius: 5px;
 	display: flex;
 	flex-direction: column;
 }
 
 .dividers {
-	border-top: 0.1px solid rgb(255, 255, 255, 0.05);
+	height: 1px;
+	border-top: 0.01px solid #53535371;
 	margin-block: 1em;
 }
 
 .containerRight {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
 }
 
 .title {
 	color: white;
-	font-weight: 700;
-	font-size: 1.1rem;
+	font-size: 1rem;
 }
 
 .titleTop {
+	font-size: 1em;
+	font-weight: 700;
 	margin-bottom: 0.5em;
 }
 
@@ -37,7 +42,7 @@
 	color: white;
 	background-color: var(--text-box-bg) !important;
 	border-radius: var(--border-radius) !important;
-	border: none;
+	border: 2px solid rgb(67, 67, 79);
 }
 
 .input {
@@ -53,5 +58,5 @@
 
 .input:focus,
 .textArea:focus {
-	outline: 2px solid var(--text-box-outline-color);
+	outline: 0.5px solid var(--text-box-outline-color);
 }

@@ -8,8 +8,8 @@
 	--menu-width: calc(100vw / 24 * 2);
 	--container-padding-top: 3rem;
 	--container-padding-right: 6rem;
-	--container-padding-left: 1rem;
-	--gap: var(--container-padding-left);
+	--container-padding-left: 2rem;
+	--gap: calc(0.5 * var(--container-padding-left));
 	--container-padding-bottom: 2rem;
 	--border-radius: 3px;
 	--heading-font-size: 1.7rem;

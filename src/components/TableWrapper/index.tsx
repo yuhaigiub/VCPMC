@@ -17,7 +17,7 @@ const TableWrapper: React.FC<Props> = ({ maxRow = 9 }) => {
 						colorText: "#fff",
 						colorTextHeading: "#ffac69",
 						colorBgContainer: "rgba(47, 47, 65, 0.7)",
-						colorSplit: "#727288",
+						colorSplit: "#53535371",
 						fontSize: 14,
 						lineHeight: 0.8,
 					},

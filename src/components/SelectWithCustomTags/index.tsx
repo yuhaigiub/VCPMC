@@ -7,7 +7,7 @@ const SelectWithCustomTags = () => {
 		<ConfigProvider
 			theme={{
 				components: {
-					Select: {},
+					Select: { colorBgContainer: "rgba(47, 47, 65, 0.7)" },
 				},
 			}}>
 			<Select

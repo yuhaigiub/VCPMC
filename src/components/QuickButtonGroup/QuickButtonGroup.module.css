@@ -12,6 +12,7 @@
 }
 
 .group {
+	--border-radius: 9px;
 	border-radius: var(--border-radius) 0 0 var(--border-radius);
 	overflow: hidden;
 	width: calc(100% - 1rem);

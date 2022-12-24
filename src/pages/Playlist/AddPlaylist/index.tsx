@@ -6,6 +6,7 @@ import { ConfigProvider, Select } from "antd";
 import LayoutPage from "../../../components/Layouts/Page/LayoutPage";
 import TableWrapper from "../../../components/TableWrapper";
 import SelectWithCustomTags from "../../../components/SelectWithCustomTags";
+import TwoButtonsWrapper from "../../../components/TwoButtonsWrapper";
 
 const AddPlaylistPage = () => {
 	return (
@@ -28,29 +29,29 @@ const AddPlaylistPage = () => {
 									display: "flex",
 									justifyContent: "center",
 									alignItems: "center",
-									color: "yellow",
+									color: "#ff7506",
 									aspectRatio: "3/1",
-									border: "2px solid yellow",
+									border: "2px solid #ff7506",
 									borderRadius: "8px",
 								}}>
 								Tải ảnh lên
 							</div>
-							<hr className={style.dividers} />
+							<div className={style.dividers} />
 						</div>
 						<div>
 							<div className={`${style.title} ${style.titleTop}`}>Tiêu đề:</div>
 							<input className={`${style.input} ${style.textBox}`} />
-							<hr className={style.dividers} />
+							<div className={style.dividers} />
 						</div>
 						<div>
 							<div className={style.title}>Tổng số:</div>
 							<div className={style.title}>Tổng thời lượng:</div>
-							<hr className={style.dividers} />
+							<div className={style.dividers} />
 						</div>
 						<div>
 							<div className={`${style.title} ${style.titleTop}`}>Mô tả:</div>
 							<textarea className={`${style.textArea} ${style.textBox}`} />
-							<hr className={style.dividers} />
+							<div className={style.dividers} />
 						</div>
 						<div>
 							<div className={`${style.title} ${style.titleTop}`}>Chủ đề:</div>
@@ -58,7 +59,8 @@ const AddPlaylistPage = () => {
 						</div>
 					</div>
 					<div className={style.containerRight}>
-						<TableWrapper maxRow={10} />
+						<TableWrapper maxRow={9} />
+						<TwoButtonsWrapper />
 					</div>
 				</div>
 			</LayoutPage>
