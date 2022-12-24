@@ -1,12 +1,12 @@
 import React from "react";
-import BreadcrumbWrapper from "../../components/BreadcrumbWrapper";
+import commonStyle from "../pageLayout.module.css";
+
 import LayoutContent from "../../components/Layouts/LayoutContent";
 import LayoutContentInner from "../../components/Layouts/LayoutContentInner";
 import QuickButtonGroup from "../../components/QuickButtonGroup";
+import BreadcrumbWrapper from "../../components/BreadcrumbWrapper";
 
-import commonStyle from "../pageLayout.module.css";
-
-const ProfilePage = () => {
+const PlaylistPage = () => {
 	return (
 		<LayoutContent>
 			<QuickButtonGroup />
@@ -19,4 +19,4 @@ const ProfilePage = () => {
 	);
 };
 
-export default ProfilePage;
+export default PlaylistPage;

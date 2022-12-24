@@ -1,18 +1,55 @@
-import React from "react";
+import React, { useRef } from "react";
+import style from "./LayoutWithoutMenu.module.css";
+
 import { Row, Col } from "antd";
 import { Outlet } from "react-router-dom";
 
-import style from "./LayoutWithoutMenu.module.css";
-import MenuWrapper from "../MenuWrapper";
+import MenuWrapper from "../../MenuWrapper";
 
 const LayoutWithoutMenu: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+	const menuContainerRef = useRef<HTMLDivElement>(null);
+	const arrowRef = useRef<HTMLDivElement>(null);
+
 	return (
 		<div className={style.container}>
-			<div className={style.menuContainer}>
-				<div className={style.menu}>
+			<div
+				ref={menuContainerRef}
+				className={style.menuContainer}
+				onMouseOver={() => {
+					if (menuContainerRef.current) {
+						menuContainerRef.current.style.left = "0";
+					}
+				}}
+				onMouseLeave={() => {
+					if (menuContainerRef.current) {
+						menuContainerRef.current.style.left = "calc(-1 * var(--menu-width))";
+					}
+				}}>
+				<div
+					className={style.menu}
+					onMouseEnter={() => {
+						if (menuContainerRef.current) {
+							menuContainerRef.current.style.left = "0";
+						}
+						if (arrowRef.current) {
+							arrowRef.current.style.backgroundColor = "inherit";
+							arrowRef.current.innerText = "";
+						}
+					}}
+					onMouseLeave={() => {
+						if (menuContainerRef.current) {
+							menuContainerRef.current.style.left = "calc(-1 * var(--menu-width))";
+						}
+						if (arrowRef.current) {
+							arrowRef.current.style.backgroundColor = "#313131";
+							arrowRef.current.innerText = "▶";
+						}
+					}}>
 					<MenuWrapper />
 				</div>
-				<div className={style.arrow}>{">"}</div>
+				<div className={style.arrow} ref={arrowRef}>
+					{"▶"}
+				</div>
 			</div>
 			<div className={style.contentContainer}>
 				<Outlet />

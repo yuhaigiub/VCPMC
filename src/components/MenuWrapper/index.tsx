@@ -20,7 +20,7 @@ const MenuWrapper = () => {
 					},
 				},
 			}}>
-			<Menu items={items} theme="dark" />;
+			<Menu items={items} theme="dark" />
 		</ConfigProvider>
 	);
 };

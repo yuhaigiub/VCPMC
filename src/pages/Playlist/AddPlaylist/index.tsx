@@ -1,0 +1,22 @@
+import React from "react";
+import commonStyle from "../../pageLayout.module.css";
+
+import LayoutContent from "../../../components/Layouts/LayoutContent";
+import LayoutContentInner from "../../../components/Layouts/LayoutContentInner";
+import QuickButtonGroup from "../../../components/QuickButtonGroup";
+import BreadcrumbWrapper from "../../../components/BreadcrumbWrapper";
+
+const AddPlaylistPage = () => {
+	return (
+		<LayoutContent>
+			<QuickButtonGroup />
+			<LayoutContentInner>
+				<BreadcrumbWrapper />
+				<div className={commonStyle.heading}>Thông tin cơ bản</div>
+				<div className={commonStyle.content}></div>
+			</LayoutContentInner>
+		</LayoutContent>
+	);
+};
+
+export default AddPlaylistPage;
