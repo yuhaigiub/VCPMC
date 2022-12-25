@@ -1,9 +1,9 @@
 import React from "react";
+import style from "./LayoutWithMenu.module.css";
 
 import { Outlet } from "react-router-dom";
 
-import style from "./LayoutWithMenu.module.css";
-import MenuWrapper from "../../../MenuWrapper";
+import MenuWrapper from "../../../static/MenuWrapper";
 
 const LayoutWithMenu: React.FC = () => {
 	return (

@@ -1,7 +1,7 @@
 import React from "react";
 
 import LayoutPage from "../../components/Layouts/Page/LayoutPage";
-import TableWrapper from "../../components/TableWrapper";
+import TableWrapper from "../../components/static/TableWrapper";
 
 const RecordPage = () => {
 	return (

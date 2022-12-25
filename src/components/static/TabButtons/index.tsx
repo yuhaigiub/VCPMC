@@ -1,5 +1,4 @@
 import React from "react";
-
 import style from "./TabButtons.module.css";
 
 const TabButtons: React.FC<Props> = ({ left, setLeft }) => {

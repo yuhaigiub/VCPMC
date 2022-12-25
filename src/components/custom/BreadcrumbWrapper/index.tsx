@@ -1,6 +1,4 @@
 import React from "react";
-import { Breadcrumb, ConfigProvider } from "antd";
-
 import style from "./BreadcrumbWrapper.module.css";
 
 const items = [

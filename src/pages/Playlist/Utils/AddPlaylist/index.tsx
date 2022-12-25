@@ -1,12 +1,10 @@
 import React from "react";
 import style from "./AddPlaylistPage.module.css";
 
-import { ConfigProvider, Select } from "antd";
-
-import LayoutPage from "../../../components/Layouts/Page/LayoutPage";
-import TableWrapper from "../../../components/TableWrapper";
-import SelectWithCustomTags from "../../../components/SelectWithCustomTags";
-import TwoButtonsWrapper from "../../../components/TwoButtonsWrapper";
+import LayoutPage from "../../../../components/Layouts/Page/LayoutPage";
+import TableWrapper from "../../../../components/static/TableWrapper";
+import SelectWithCustomTags from "../../../../components/static/SelectWithCustomTags";
+import TwoButtonsWrapper from "../../../../components/static/TwoButtonsWrapper";
 
 const AddPlaylistPage = () => {
 	return (

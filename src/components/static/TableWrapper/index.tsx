@@ -3,7 +3,6 @@ import React from "react";
 import { Table, ConfigProvider } from "antd";
 
 import type { ColumnsType } from "antd/es/table";
-import style from "./TableWrapper.module.css";
 
 const TableWrapper: React.FC<Props> = ({ maxRow = 9 }) => {
 	return (

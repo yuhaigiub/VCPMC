@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import style from "./ContractDetailPage.module.css";
 
-import LayoutPage from "../../../../components/Layouts/Page/LayoutPage";
+import LayoutPage from "../../../../../components/Layouts/Page/LayoutPage";
 import ContractInfo from "./ContractInfo";
 import SongInfo from "./SongInfo";
-import TabButtons from "../../../../components/TabButtons";
+import TabButtons from "../../../../../components/static/TabButtons";
 
 const ContractDetailPage = () => {
 	const [left, setLeft] = useState<boolean>(true);

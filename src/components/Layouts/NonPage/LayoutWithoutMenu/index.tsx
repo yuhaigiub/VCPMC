@@ -1,10 +1,9 @@
 import React, { useRef } from "react";
 import style from "./LayoutWithoutMenu.module.css";
 
-import { Row, Col } from "antd";
 import { Outlet } from "react-router-dom";
 
-import MenuWrapper from "../../../MenuWrapper";
+import MenuWrapper from "../../../static/MenuWrapper";
 
 const LayoutWithoutMenu: React.FC = () => {
 	const menuContainerRef = useRef<HTMLDivElement>(null);

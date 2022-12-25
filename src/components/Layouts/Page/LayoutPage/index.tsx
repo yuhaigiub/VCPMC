@@ -3,9 +3,9 @@ import React from "react";
 import style from "./LayoutPage.module.css";
 
 import LayoutContent from "../../NonPage/LayoutContent";
-import QuickButtonGroup from "../../../QuickButtonGroup";
+import QuickButtonGroup from "../../../custom/QuickButtonGroup";
 import LayoutContentInner from "../../NonPage/LayoutContentInner";
-import BreadcrumbWrapper from "../../../BreadcrumbWrapper";
+import BreadcrumbWrapper from "../../../custom/BreadcrumbWrapper";
 
 const LayoutPage: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
 	return (

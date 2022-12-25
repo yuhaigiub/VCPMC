@@ -4,8 +4,8 @@ import style from "./ContractPage.module.css";
 import { Select, Input } from "antd";
 
 import LayoutPage from "../../../components/Layouts/Page/LayoutPage";
-import TableWrapper from "../../../components/TableWrapper";
-import TabButtons from "../../../components/TabButtons";
+import TableWrapper from "../../../components/static/TableWrapper";
+import TabButtons from "../../../components/static/TabButtons";
 
 const ContractPage = () => {
 	const [left, setLeft] = useState<boolean>(true);

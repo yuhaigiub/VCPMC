@@ -1,0 +1,13 @@
+.field {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.title {
+	font-size: 0.8rem;
+	color: white;
+	font-weight: 700;
+}
+
+.value {
+	color: rgb(166, 166, 166, 0.8);
+}

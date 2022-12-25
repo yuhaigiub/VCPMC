@@ -5,6 +5,7 @@
 	padding-right: var(--container-padding-right);
 	padding-left: var(--container-padding-left);
 	padding-bottom: var(--container-padding-bottom);
+
 	background-color: var(--background-black);
 	position: relative;
 }

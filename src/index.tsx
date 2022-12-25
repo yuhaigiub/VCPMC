@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import { ConfigProvider } from "antd";
-
 import "./index.css";
 import App from "./App";
+
+import { BrowserRouter } from "react-router-dom";
+import { ConfigProvider } from "antd";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<React.StrictMode>
@@ -13,18 +13,17 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 				theme={{
 					token: {
 						colorPrimary: "#FF7506",
+						colorBgContainer: "rgba(47, 47, 65, 0.7)",
+						colorBorder: "rgb(67, 67, 79)",
+						colorText: "#fff",
+						colorTextDescription: "#fff",
 					},
 					components: {
 						Select: {
-							colorBgContainer: "rgba(47, 47, 65, 0.7)",
-							colorBorder: "rgb(67, 67, 79)",
 							colorText: "#000",
 						},
-						Input: {
-							colorBgContainer: "rgba(47, 47, 65, 0.7)",
-							colorBorder: "rgb(67, 67, 79)",
-							colorText: "#fff",
-						},
+						Input: {},
+						DatePicker: {},
 					},
 				}}>
 				<App />
