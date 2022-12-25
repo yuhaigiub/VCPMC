@@ -4,27 +4,12 @@
 	gap: 1em;
 }
 
-.tabContainer {
-	width: fit-content;
-	border: 1px solid var(--text-orange);
-	border-radius: 20px;
-	display: flex;
-}
-
-.tab {
-	user-select: none;
-	cursor: pointer;
-	padding: 0.4em 0.8em;
-	color: white;
-}
-
-.tabActive {
-	border-radius: 20px;
-	background-color: var(--text-orange);
-	font-weight: 700;
-}
-
 .searchContainer {
+	/* background-color: red; */
+	height: 2rem;
+}
+
+.flexContainer {
 	display: flex;
 	justify-content: space-between;
 }
@@ -42,11 +27,11 @@
 }
 
 .text {
+	/* background-color: blue; */
 	color: white;
-	line-height: 2;
 	font-size: 0.9rem;
 	font-weight: 700;
 	display: flex;
 	justify-content: center;
-	align-content: center;
+	align-items: center;
 }

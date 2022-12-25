@@ -3,7 +3,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-import ContractRoute from "./routes/Contract";
+import ContractRoute from "./routes/Manage/Contract";
 import PlaylistRoute from "./routes/Playlist";
 import ProfileRoute from "./routes/Profile";
 import RecordRoute from "./routes/Record";

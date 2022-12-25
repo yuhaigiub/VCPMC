@@ -1,0 +1,33 @@
+.container {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2em;
+}
+
+.title {
+	font-size: 0.8rem;
+	color: white;
+	font-weight: 700;
+}
+
+.value {
+	color: rgb(166, 166, 166, 0.8);
+}
+
+.subContainerTitle {
+	color: var(--text-orange);
+	font-weight: 700;
+}
+
+.subContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+.field {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}

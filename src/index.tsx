@@ -18,10 +18,12 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 						Select: {
 							colorBgContainer: "rgba(47, 47, 65, 0.7)",
 							colorBorder: "rgb(67, 67, 79)",
+							colorText: "#000",
 						},
 						Input: {
 							colorBgContainer: "rgba(47, 47, 65, 0.7)",
 							colorBorder: "rgb(67, 67, 79)",
+							colorText: "#fff",
 						},
 					},
 				}}>

@@ -1,0 +1,19 @@
+.tabContainer {
+	width: fit-content;
+	border: 1px solid var(--text-orange);
+	border-radius: 20px;
+	display: flex;
+}
+
+.tab {
+	user-select: none;
+	cursor: pointer;
+	padding: 0.4em 0.8em;
+	color: white;
+}
+
+.tabActive {
+	border-radius: 20px;
+	background-color: var(--text-orange);
+	font-weight: 700;
+}
