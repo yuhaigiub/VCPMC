@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import style from "./ContractDetailPage.module.css";
+import style from "./ContractAuthorizeDetailPage.module.css";
 
-import LayoutPage from "../../../../../components/Layouts/Page/LayoutPage";
 import ContractInfo from "./ContractInfo";
 import SongInfo from "./SongInfo";
-import TabButtons from "../../../../../components/static/TabButtons";
+import LayoutPage from "../../../../../../components/Layouts/Page/LayoutPage";
+import TabButtons from "../../../../../../components/static/TabButtons";
 
-const ContractDetailPage = () => {
+const ContractAuthorizeDetailPage = () => {
 	const [left, setLeft] = useState<boolean>(true);
 
 	return (
@@ -19,4 +19,4 @@ const ContractDetailPage = () => {
 	);
 };
 
-export default ContractDetailPage;
+export default ContractAuthorizeDetailPage;

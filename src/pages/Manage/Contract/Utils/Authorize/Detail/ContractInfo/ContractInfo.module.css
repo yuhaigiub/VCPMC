@@ -1,12 +1,12 @@
 .container {
-	width: 100%;
-	height: 100%;
+	width: 90%;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 2em;
+	gap: 1em 4em;
 }
 
 .subContainerTitle {
+	grid-column: 1/4;
 	color: var(--text-orange);
 	font-weight: 700;
 }

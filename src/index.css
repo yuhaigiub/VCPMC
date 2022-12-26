@@ -56,3 +56,13 @@ body {
 	position: absolute;
 	left: 0;
 }
+
+.ant-input,
+.ant-picker-input,
+.ant-select {
+	line-height: 1 !important;
+}
+
+.ant-select-selection-search {
+	line-height: 3 !important;
+}

@@ -3,7 +3,7 @@ import style from "./SongInfo.module.css";
 
 import { Select, Input } from "antd";
 
-import TableWrapper from "../../../../../../components/static/TableWrapper";
+import TableWrapper from "../../../../../../../components/static/TableWrapper";
 
 const SongInfo = () => {
 	return (

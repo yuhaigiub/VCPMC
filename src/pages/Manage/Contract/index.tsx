@@ -40,6 +40,7 @@ const AuthorizedContract = () => {
 					<Input style={{ width: "20rem" }} />
 				</div>
 			</div>
+
 			<TableWrapper maxRow={7} />
 		</>
 	);

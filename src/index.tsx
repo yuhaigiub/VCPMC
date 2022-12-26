@@ -14,16 +14,24 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 					token: {
 						colorPrimary: "#FF7506",
 						colorBgContainer: "rgba(47, 47, 65, 0.7)",
+						colorBgElevated: "rgba(47, 47, 65)",
 						colorBorder: "rgb(67, 67, 79)",
+						colorBorderSecondary: "rgb(67, 67, 79)",
 						colorText: "#fff",
-						colorTextDescription: "#fff",
+						colorTextPlaceholder: "rgb(166, 166, 166, 0.8);",
+						colorTextDisabled: "#888",
 					},
 					components: {
 						Select: {
-							colorText: "#000",
+							colorTextDisabled: "#ff7506",
+							colorText: "#fff",
 						},
 						Input: {},
-						DatePicker: {},
+						DatePicker: {
+							colorIcon: "#ff7506",
+							colorIconHover: "#fff",
+							colorTextDisabled: "#ff7506",
+						},
 					},
 				}}>
 				<App />

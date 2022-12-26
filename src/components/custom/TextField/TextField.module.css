@@ -1,6 +1,7 @@
 .field {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1.25fr;
+	align-items: center;
 }
 .title {
 	font-size: 0.8rem;

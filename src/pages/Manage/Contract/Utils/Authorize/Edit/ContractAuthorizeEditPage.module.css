@@ -1,0 +1,20 @@
+.container {
+	width: 90%;
+	height: 90%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1em 4em;
+	margin-bottom: 1em;
+}
+
+.subContainerTitle {
+	grid-column: 1/4;
+	color: var(--text-orange);
+	font-weight: 700;
+}
+
+.subContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8em;
+}
