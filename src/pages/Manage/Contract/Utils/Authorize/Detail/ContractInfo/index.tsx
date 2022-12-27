@@ -3,6 +3,7 @@ import style from "./ContractInfo.module.css";
 
 import TextField from "../../../../../../../components/custom/TextField";
 import TopLeft from "../../../../components/TopLeft";
+import BottomLeft from "../../../../components/BottomLeft";
 
 const ContractInfo = () => {
 	return (
@@ -22,12 +23,7 @@ const ContractInfo = () => {
 			</div>
 			<div className={style.subContainerTitle}>Thông tin Pháp nhân ủy quyền</div>
 			<div className={style.subContainer}>
-				<TextField title="Pháp nhân ủy quyền" />
-				<TextField title="Tên người ủy quyền" />
-				<TextField title="Ngày sinh" />
-				<TextField title="Giới tính" />
-				<TextField title="Quốc tịch" />
-				<TextField title="Số điện thoại" />
+				<BottomLeft type="authorizeDetail" />
 			</div>
 			<div className={style.subContainer}>
 				<TextField title="Số CMND/CCCD" />

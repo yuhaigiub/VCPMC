@@ -5,12 +5,14 @@
 	grid-template-columns: repeat(3, 1fr);
 	gap: 1em 4em;
 	margin-bottom: 1em;
+	font-size: 0.8rem;
 }
 
 .subContainerTitle {
 	grid-column: 1/4;
 	color: var(--text-orange);
 	font-weight: 700;
+	font-size: 1.1rem;
 }
 
 .subContainer {
