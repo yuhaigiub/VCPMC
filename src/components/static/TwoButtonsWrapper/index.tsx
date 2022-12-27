@@ -1,15 +1,21 @@
 import React from "react";
 import style from "./TwoButtonsWrapper.module.css";
 
-const TwoButtonsWrapper: React.FC<Props> = ({ onPrimaryClick = () => {} }) => {
+const TwoButtonsWrapper: React.FC<Props> = ({
+	onPrimaryClick = () => {},
+	primaryType = "submit",
+}) => {
 	return (
 		<div className={style.container}>
 			<div onClick={() => {}} className={`${style.button} ${style.default}`}>
 				Hủy
 			</div>
-			<div onClick={onPrimaryClick} className={`${style.button} ${style.primary}`}>
+			<button
+				type={primaryType}
+				onClick={onPrimaryClick}
+				className={`${style.button} ${style.primary}`}>
 				Lưu
-			</div>
+			</button>
 		</div>
 	);
 };
@@ -17,5 +23,6 @@ const TwoButtonsWrapper: React.FC<Props> = ({ onPrimaryClick = () => {} }) => {
 export default TwoButtonsWrapper;
 
 interface Props {
+	primaryType?: "submit" | "button" | "reset" | undefined;
 	onPrimaryClick?: () => void;
 }

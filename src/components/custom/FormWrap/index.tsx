@@ -1,4 +1,4 @@
-import { Form, Input, DatePicker } from "antd";
+import { Form, Input, DatePicker, Select } from "antd";
 
 export const FormWrapInput: React.FC<{ name: string }> = ({ name }) => {
 	return (
@@ -24,6 +24,14 @@ export const FormWrapTextArea: React.FC<{ name: string; minRows?: number; maxRow
 	return (
 		<Form.Item name={name} noStyle>
 			<Input.TextArea autoSize={{ minRows, maxRows }} />
+		</Form.Item>
+	);
+};
+
+export const FormWrapSelect: React.FC<{ name: string }> = ({ name }) => {
+	return (
+		<Form.Item name={name} noStyle>
+			<Select style={{ width: "100%" }} />
 		</Form.Item>
 	);
 };

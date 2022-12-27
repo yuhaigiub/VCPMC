@@ -2,14 +2,16 @@ import React from "react";
 import style from "./ContractInfo.module.css";
 
 import TextField from "../../../../../../../components/custom/TextField";
-import TopLeft from "../../../../components/TopLeft";
-import BottomLeft from "../../../../components/BottomLeft";
 
 const ContractInfo = () => {
 	return (
 		<div className={style.container}>
 			<div className={style.subContainer}>
-				<TopLeft type="authorizeDetail" />
+				<TextField title="Số hợp đồng" />
+				<TextField title="Tên hợp đồng" />
+				<TextField title="Ngày hiệu lực" />
+				<TextField title="Ngày hết hạn" />
+				<TextField title="Tình trạng" />
 			</div>
 			<div className={style.subContainer}>
 				<TextField title="Đính kèm tệp" />
@@ -23,7 +25,12 @@ const ContractInfo = () => {
 			</div>
 			<div className={style.subContainerTitle}>Thông tin Pháp nhân ủy quyền</div>
 			<div className={style.subContainer}>
-				<BottomLeft type="authorizeDetail" />
+				<TextField title="Pháp nhân ủy quyền" />
+				<TextField title="Tên người ủy quyền" />
+				<TextField title="Ngày sinh" />
+				<TextField title="Giới tính" />
+				<TextField title="Quốc tịch" />
+				<TextField title="Số điện thoại" />
 			</div>
 			<div className={style.subContainer}>
 				<TextField title="Số CMND/CCCD" />

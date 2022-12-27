@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import LayoutWithMenu from "../../components/Layouts/NonPage/LayoutWithMenu";
 import LayoutWithoutMenu from "../../components/Layouts/NonPage/LayoutWithoutMenu";
 import RecordPage from "../../pages/Record";
-import RecordEditPage from "../../pages/Record/Edit";
+import RecordEditPage from "../../pages/Record/Utils/Edit";
 
 const RecordRoute = () => {
 	return (

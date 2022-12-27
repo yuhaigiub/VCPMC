@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import style from "./ContractAuthorizeAddPage.module.css";
 
-import { Input, DatePicker, Select, Radio, Form } from "antd";
+import { Radio, Form } from "antd";
+import {
+	FormWrapInput,
+	FormWrapTextArea,
+	FormWrapDatePicker,
+	FormWrapSelect,
+} from "../../../../../../components/custom/FormWrap";
 
 import TextField from "../../../../../../components/custom/TextField";
 import LayoutPage from "../../../../../../components/Layouts/Page/LayoutPage";
@@ -70,7 +76,7 @@ const ContractAuthorizeAddPage = () => {
 						<BottomRight isIndividual={isIndividual} />
 					</div>
 				</div>
-				<TwoButtonsWrapper onPrimaryClick={() => {}} />
+				<TwoButtonsWrapper />
 			</Form>
 		</LayoutPage>
 	);
@@ -81,10 +87,10 @@ export default ContractAuthorizeAddPage;
 const TopLeft = () => {
 	return (
 		<>
-			<TextField title="Số hợp đồng" value={<Input />} />
-			<TextField title="Tên hợp đồng" value={<Input />} />
-			<TextField title="Ngày hiệu lực" value={<DatePicker style={{ width: "100%" }} />} />
-			<TextField title="Ngày hết hạn" value={<DatePicker style={{ width: "100%" }} />} />
+			<TextField title="Số hợp đồng" value={<FormWrapInput name="contractNumber" />} />
+			<TextField title="Tên hợp đồng" value={<FormWrapInput name="contractName" />} />
+			<TextField title="Ngày hiệu lực" value={<FormWrapDatePicker name="contractStartDate" />} />
+			<TextField title="Ngày hết hạn" value={<FormWrapDatePicker name="contractEndDate" />} />
 		</>
 	);
 };
@@ -99,33 +105,19 @@ const BottomLeft: React.FC<{
 			<TextField title="Pháp nhân ủy quyền" value={typeRadio} />
 			{isIndividual ? (
 				<>
-					<TextField title="Tên người ủy quyền" value={<Input />} />
-					<TextField title="Ngày sinh" value={<DatePicker style={{ width: "100%" }} />} />
+					<TextField title="Tên người ủy quyền" value={<FormWrapInput name="name" />} />
+					<TextField title="Ngày sinh" value={<FormWrapDatePicker name="dateOfBirth" />} />
 					<TextField title="Giới tính" value={genderRadio} />
-					<TextField
-						title="Quốc tịch"
-						value={
-							<Select
-								style={{ width: "100%" }}
-								options={[
-									{ value: "vn", label: "vn" },
-									{ value: "cn", label: "cn" },
-								]}
-							/>
-						}
-					/>
-					<TextField title="Số điện thoại" value={<Input />} />
+					<TextField title="Quốc tịch" value={<FormWrapSelect name="country" />} />
+					<TextField title="Số điện thoại" value={<FormWrapInput name="phone" />} />
 				</>
 			) : (
 				<>
-					<TextField title="Tên tổ chức" value={<Input />} />
-					<TextField title="Mã số thuế" value={<Input />} />
-					<TextField title="Số tài khoản" value={<Input />} />
-					<TextField title="Ngân hàng" value={<Input />} />
-					<TextField
-						title="Địa chỉ"
-						value={<Input.TextArea autoSize={{ minRows: 3, maxRows: 3 }} />}
-					/>
+					<TextField title="Tên tổ chức" value={<FormWrapInput name="organizationName" />} />
+					<TextField title="Mã số thuế" value={<FormWrapInput name="organizationTaxNumber" />} />
+					<TextField title="Số tài khoản" value={<FormWrapInput name="organizationBankNumber" />} />
+					<TextField title="Ngân hàng" value={<FormWrapInput name="organizationBankName" />} />
+					<TextField title="Địa chỉ" value={<FormWrapTextArea name="organizationAddress" />} />
 				</>
 			)}
 		</>
@@ -138,25 +130,22 @@ const BottomMid: React.FC<{ isIndividual: boolean; genderRadio: React.ReactNode 
 }) => {
 	return isIndividual ? (
 		<>
-			<TextField title="Số CMND/CCCD" value={<Input />} />
-			<TextField title="Ngày cấp" value={<DatePicker style={{ width: "100%" }} />} />
-			<TextField title="Nơi cấp" value={<Input />} />
-			<TextField title="Mã số thuế" value={<Input />} />
-			<TextField
-				title="Nơi cư trú"
-				value={<Input.TextArea autoSize={{ minRows: 3, maxRows: 3 }} />}
-			/>
+			<TextField title="Số CMND/CCCD" value={<FormWrapInput name="idCardNumber" />} />
+			<TextField title="Ngày cấp" value={<FormWrapDatePicker name="idCardStartDate" />} />
+			<TextField title="Nơi cấp" value={<FormWrapInput name="idCardAddress" />} />
+			<TextField title="Mã số thuế" value={<FormWrapInput name="taxNumber" />} />
+			<TextField title="Nơi cư trú" value={<FormWrapTextArea name="address" />} />
 		</>
 	) : (
 		<>
-			<TextField title="Người đại diện" value={<Input />} />
-			<TextField title="Chức vụ" value={<Input />} />
-			<TextField title="Ngày sinh" value={<DatePicker style={{ width: "100%" }} />} />
+			<TextField title="Người đại diện" value={<FormWrapInput name="name" />} />
+			<TextField title="Chức vụ" value={<FormWrapInput name="role" />} />
+			<TextField title="Ngày sinh" value={<FormWrapDatePicker name="dateOfBirth" />} />
 			<TextField title="Giới tính" value={genderRadio} />
-			<TextField title="Số CMND/CCCD" value={<Input />} />
-			<TextField title="Ngày cấp" value={<DatePicker style={{ width: "100%" }} />} />
-			<TextField title="Nơi cấp" value={<Input />} />
-			<TextField title="Quốc tịch" value={<Select style={{ width: "100%" }} />} />
+			<TextField title="Số CMND/CCCD" value={<FormWrapInput name="idCardNumber" />} />
+			<TextField title="Ngày cấp" value={<FormWrapDatePicker name="idCardStartDate" />} />
+			<TextField title="Nơi cấp" value={<FormWrapInput name="idCardAddress" />} />
+			<TextField title="Quốc tịch" value={<FormWrapSelect name="country" />} />
 		</>
 	);
 };
@@ -164,22 +153,19 @@ const BottomMid: React.FC<{ isIndividual: boolean; genderRadio: React.ReactNode 
 const BottomRight: React.FC<{ isIndividual: boolean }> = ({ isIndividual }) => {
 	return isIndividual ? (
 		<>
-			<TextField title="Email" value={<Input />} />
-			<TextField title="Tên đăng nhập" value={<Input />} />
-			<TextField title="Mật khẩu" value={<Input />} />
-			<TextField title="Số tài khoản" value={<Input />} />
-			<TextField title="Ngân hàng" value={<Input />} />
+			<TextField title="Email" value={<FormWrapInput name="email" />} />
+			<TextField title="Tên đăng nhập" value={<FormWrapInput name="username" />} />
+			<TextField title="Mật khẩu" value={<FormWrapInput name="password" />} />
+			<TextField title="Số tài khoản" value={<FormWrapInput name="bankNumber" />} />
+			<TextField title="Ngân hàng" value={<FormWrapInput name="bankName" />} />
 		</>
 	) : (
 		<>
-			<TextField
-				title="Nơi cư trú"
-				value={<Input.TextArea autoSize={{ minRows: 3, maxRows: 3 }} />}
-			/>
-			<TextField title="Số điện thoại" value={<Input />} />
-			<TextField title="Email" value={<Input />} />
-			<TextField title="Tên đăng nhập" value={<Input />} />
-			<TextField title="Mật khẩu" value={<Input />} />
+			<TextField title="Nơi cư trú" value={<FormWrapTextArea name="address" />} />
+			<TextField title="Số điện thoại" value={<FormWrapInput name="phone" />} />
+			<TextField title="Email" value={<FormWrapInput name="email" />} />
+			<TextField title="Tên đăng nhập" value={<FormWrapInput name="username" />} />
+			<TextField title="Mật khẩu" value={<FormWrapInput name="password" />} />
 		</>
 	);
 };

@@ -1,8 +1,8 @@
 import React from "react";
 import style from "./RecordEditPage.module.css";
 
-import LayoutPage from "../../../components/Layouts/Page/LayoutPage";
-import TwoButtonsWrapper from "../../../components/static/TwoButtonsWrapper";
+import LayoutPage from "../../../../components/Layouts/Page/LayoutPage";
+import TwoButtonsWrapper from "../../../../components/static/TwoButtonsWrapper";
 import { Input } from "antd";
 
 const RecordEditPage = () => {
