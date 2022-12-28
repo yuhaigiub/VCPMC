@@ -1,11 +1,14 @@
 import React from "react";
-
 import style from "./User_IndividualDetailPage.module.css";
+
+import { useNavigate } from "react-router-dom";
 
 import LayoutPage from "../../../../../../components/Layouts/Page/LayoutPage";
 import TextField from "../../../../../../components/custom/TextField";
 
 const User_IndividualDetailPage = () => {
+	const navigate = useNavigate();
+
 	return (
 		<LayoutPage
 			heading="Thông tin người dùng"
@@ -14,6 +17,14 @@ const User_IndividualDetailPage = () => {
 				{ name: "Đơn vị sử dụng", path: "/manage/user" },
 				{ name: "Chi tiết", path: "/manage/user/detail" },
 				{ name: "Thông tin người dùng", path: "manage/user/individual/detail" },
+			]}
+			quickButtonData={[
+				{
+					description: "Chỉnh sửa",
+					onClick: () => {
+						navigate("/manage/user/individual/edit");
+					},
+				},
 			]}>
 			<div className={style.container}>
 				<div className={style.leftContainer}>

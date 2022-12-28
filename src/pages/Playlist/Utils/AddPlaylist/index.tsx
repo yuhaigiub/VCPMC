@@ -13,7 +13,8 @@ const AddPlaylistPage = () => {
 			breadcrumbData={[
 				{ name: "Playlist", path: "?" },
 				{ name: "Thêm Playlist mới", path: "/playlist/add" },
-			]}>
+			]}
+			quickButtonData={[{ description: "Thêm bản ghi", onClick: () => {} }]}>
 			<div className={style.container}>
 				<div className={style.containerLeft}>
 					<div>

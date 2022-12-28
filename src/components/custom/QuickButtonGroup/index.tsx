@@ -1,14 +1,15 @@
 import React from "react";
-import QuickButton from "./QuickButton";
-
 import style from "./QuickButtonGroup.module.css";
 
-const QuickButtonGroup = () => {
+import { QuickButtonType } from "../../../types/interface";
+import QuickButton from "./QuickButton";
+
+const QuickButtonGroup: React.FC<Props> = ({ items = [] }) => {
 	return (
 		<div className={style.container}>
 			<div className={style.group}>
 				{items.map((item) => {
-					return <QuickButton key={item.description} description={item.description} />;
+					return <QuickButton key={item.description} item={item} />;
 				})}
 			</div>
 		</div>
@@ -17,4 +18,6 @@ const QuickButtonGroup = () => {
 
 export default QuickButtonGroup;
 
-const items = [{ description: "Thêm hợp đồng" }, { description: "Chỉnh sửa" }];
+interface Props {
+	items?: QuickButtonType;
+}

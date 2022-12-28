@@ -6,7 +6,17 @@ import TextField from "../../../../../components/custom/TextField";
 
 const DeviceDetailPage = () => {
 	return (
-		<LayoutPage>
+		<LayoutPage
+			heading={`Thông tin thiết bị - ${"Name"}`}
+			breadcrumbData={[
+				{ name: "Danh sách thiết bị", path: "?" },
+				{ name: "Chi tiết thiết bị", path: "/manage/device/detail" },
+			]}
+			quickButtonData={[
+				{ description: "Chỉnh sửa", onClick: () => {} },
+				{ description: "Khôi phục mật khẩu", onClick: () => {} },
+				{ description: "Khôi phục bộ nhớ", onClick: () => {} },
+			]}>
 			<div className={style.container}>
 				<div className={style.firstContainer}>
 					<div className={style.title}>Thông tin thiết bị</div>

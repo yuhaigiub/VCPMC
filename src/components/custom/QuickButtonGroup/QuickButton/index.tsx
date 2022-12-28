@@ -1,16 +1,17 @@
 import React from "react";
+import { QuickButtonItem } from "../../../../types/interface";
 import style from "./QuickButton.module.css";
 
-const QuickButton: React.FC<Props> = ({ description }) => {
+const QuickButton: React.FC<Props> = ({ item }) => {
 	return (
-		<div className={style.container}>
+		<div className={style.container} onClick={item.onClick}>
 			<div className={style.icon}>+</div>
-			<div className={style.text}>{description}</div>
+			<div className={style.text}>{item.description}</div>
 		</div>
 	);
 };
 
 export default QuickButton;
 interface Props {
-	description: string;
+	item: QuickButtonItem;
 }

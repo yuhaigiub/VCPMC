@@ -6,12 +6,12 @@ import LayoutContent from "../../NonPage/LayoutContent";
 import QuickButtonGroup from "../../../custom/QuickButtonGroup";
 import LayoutContentInner from "../../NonPage/LayoutContentInner";
 import BreadcrumbWrapper from "../../../custom/BreadcrumbWrapper";
-import { BreadcrumbType } from "../../../../types/interface";
+import { BreadcrumbType, QuickButtonType } from "../../../../types/interface";
 
-const LayoutPage: React.FC<Props> = ({ children, breadcrumbData, heading }) => {
+const LayoutPage: React.FC<Props> = ({ children, breadcrumbData, heading, quickButtonData }) => {
 	return (
 		<LayoutContent>
-			<QuickButtonGroup /> {/*pass params */}
+			<QuickButtonGroup items={quickButtonData} /> {/*pass params */}
 			<LayoutContentInner>
 				<BreadcrumbWrapper items={breadcrumbData} />
 				<div className={style.heading}>{heading || "No Heading Provided"}</div>
@@ -25,6 +25,7 @@ export default LayoutPage;
 
 interface Props {
 	children?: React.ReactNode;
-	breadcrumbData?: BreadcrumbType;
 	heading?: string;
+	breadcrumbData?: BreadcrumbType;
+	quickButtonData?: QuickButtonType;
 }

@@ -15,6 +15,11 @@ const UserDetailPage = () => {
 				{ name: "Quản lý", path: "?" },
 				{ name: "Đơn vị sử dụng", path: "/manage/user" },
 				{ name: "Chi tiết", path: "/manage/user/detail" },
+			]}
+			quickButtonData={[
+				{ description: "Thêm người dùng", onClick: () => {} },
+				{ description: "Xóa", onClick: () => {} },
+				{ description: "Vai trò", onClick: () => {} },
 			]}>
 			<div className={style.container}>
 				<div className={style.searchContainer}>

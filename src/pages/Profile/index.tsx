@@ -7,7 +7,13 @@ import LayoutPage from "../../components/Layouts/Page/LayoutPage";
 
 const ProfilePage = () => {
 	return (
-		<LayoutPage heading="Thông tin cơ bản">
+		<LayoutPage
+			heading="Thông tin cơ bản"
+			quickButtonData={[
+				{ description: "Sửa thông tin", onClick: () => {} },
+				{ description: "Đổi mật khẩu", onClick: () => {} },
+				{ description: "Đăng xuất", onClick: () => {} },
+			]}>
 			<div className={style.container}>
 				<div className={style.leftContainer}>
 					<div className={style.image}>

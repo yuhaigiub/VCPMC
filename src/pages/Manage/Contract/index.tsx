@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import style from "./ContractPage.module.css";
 
+import { useNavigate } from "react-router-dom";
 import { Select, Input } from "antd";
 
 import LayoutPage from "../../../components/Layouts/Page/LayoutPage";
@@ -8,6 +9,7 @@ import TableWrapper from "../../../components/static/TableWrapper";
 import TabButtons from "../../../components/static/TabButtons";
 
 const ContractPage = () => {
+	const navigate = useNavigate();
 	const [left, setLeft] = useState<boolean>(true);
 
 	return (
@@ -16,6 +18,18 @@ const ContractPage = () => {
 			breadcrumbData={[
 				{ name: "Quản lý", path: "?" },
 				{ name: "Quản lý hợp đồng", path: "/manage/contract" },
+			]}
+			quickButtonData={[
+				{
+					description: "Thêm hợp đồng",
+					onClick: () => {
+						if (left) {
+							navigate("/manage/contract/authorize/add");
+						} else {
+							navigate("/manage/contract/exploit/add");
+						}
+					},
+				},
 			]}>
 			<div className={style.container}>
 				<TabButtons left={left} setLeft={setLeft} />

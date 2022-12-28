@@ -12,7 +12,8 @@ const RecordEditPage = () => {
 			breadcrumbData={[
 				{ name: "Bản ghi", path: "?" },
 				{ name: "Cập nhật thông tin", path: "/record/edit" },
-			]}>
+			]}
+			quickButtonData={[{ description: "Xóa bản ghi", onClick: () => {} }]}>
 			<div className={style.container}>
 				<div className={style.first}>
 					<div className={style.title}>Thông tin bản ghi</div>

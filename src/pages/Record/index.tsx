@@ -5,7 +5,9 @@ import TableWrapper from "../../components/static/TableWrapper";
 
 const RecordPage = () => {
 	return (
-		<LayoutPage heading="Kho bản ghi">
+		<LayoutPage
+			heading="Kho bản ghi"
+			quickButtonData={[{ description: "Quản lý phê duyệt", onClick: () => {} }]}>
 			<div>
 				<TableWrapper />
 			</div>

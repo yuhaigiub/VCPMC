@@ -13,7 +13,8 @@ const UserPage = () => {
 			breadcrumbData={[
 				{ name: "Quản lý", path: "?" },
 				{ name: "Đơn vị sử dụng", path: "/manage/user" },
-			]}>
+			]}
+			quickButtonData={[{ description: "Xóa", onClick: () => {} }]}>
 			<div className={style.container}>
 				<div className={style.searchContainer}>
 					<Input style={{ width: "20em" }} />

@@ -15,7 +15,7 @@ const User_IndividualEditPage = () => {
 				{ name: "Quản lý", path: "?" },
 				{ name: "Đơn vị sử dụng", path: "/manage/user" },
 				{ name: "Chi tiết", path: "/manage/user/detail" },
-				{ name: "Chỉnh sửa thông tin", path: "manage/user/individual/edit" },
+				{ name: "Chỉnh sửa thông tin", path: "/manage/user/individual/edit" },
 			]}>
 			<div className={style.container}>
 				<div className={style.leftContainer}>
