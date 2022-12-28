@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import CompanyRoute from "./routes/Manage/Company";
 import ContractRoute from "./routes/Manage/Contract";
 import DeviceRoute from "./routes/Manage/Device";
+import UserRoute from "./routes/Manage/User";
 import PlaylistRoute from "./routes/Playlist";
 import ProfileRoute from "./routes/Profile";
 import RecordRoute from "./routes/Record";
@@ -23,7 +24,7 @@ const App = () => {
 				<Route path="manage/*">
 					<Route path="contract/*" element={<ContractRoute />} />
 					<Route path="device/*" element={<DeviceRoute />} />
-					<Route path="user" />
+					<Route path="user/*" element={<UserRoute />} />
 					<Route path="company/*" element={<CompanyRoute />} />
 				</Route>
 				<Route path="statistic/*">
