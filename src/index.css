@@ -66,3 +66,7 @@ body {
 .ant-select-selection-search {
 	line-height: 3 !important;
 }
+
+.ant-select-item-option-selected {
+	color: black;
+}

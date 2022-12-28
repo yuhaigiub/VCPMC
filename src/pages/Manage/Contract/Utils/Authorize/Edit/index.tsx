@@ -40,7 +40,14 @@ const ContractAuthorizeEditPage = () => {
 	);
 
 	return (
-		<LayoutPage>
+		<LayoutPage
+			heading={`Hợp đồng ủy quyền bài hát - ${"ID"}`}
+			breadcrumbData={[
+				{ name: "Quản lý", path: "?" },
+				{ name: "Quản lý hợp đồng", path: "/manage/contract" },
+				{ name: "Chi tiết", path: "/manage/contract/authorize/detail" },
+				{ name: "Chỉnh sửa thông tin", path: "/manage/contract/authorize/edit" },
+			]}>
 			<Form
 				form={form}
 				onFinish={(values) => {

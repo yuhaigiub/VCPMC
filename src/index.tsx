@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 			<ConfigProvider
 				theme={{
 					token: {
-						colorPrimary: "#FF7506",
+						colorPrimary: "#ff7506",
 						colorBgContainer: "rgba(47, 47, 65, 0.7)",
 						colorBgElevated: "rgba(47, 47, 65)",
 						colorBorder: "rgb(67, 67, 79)",
@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 					components: {
 						Select: {
 							colorTextDisabled: "#ff7506",
-							colorText: "#fff",
+							colorText: "#bbb",
 						},
 						Input: {},
 						DatePicker: {

@@ -4,9 +4,11 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import ContractRoute from "./routes/Manage/Contract";
+import DeviceRoute from "./routes/Manage/Device";
 import PlaylistRoute from "./routes/Playlist";
 import ProfileRoute from "./routes/Profile";
 import RecordRoute from "./routes/Record";
+import ScheduleRoute from "./routes/Schedule";
 
 const App = () => {
 	return (
@@ -16,10 +18,10 @@ const App = () => {
 				<Route path="profile/*" element={<ProfileRoute />} />
 				<Route path="record/*" element={<RecordRoute />} />
 				<Route path="playlist/*" element={<PlaylistRoute />} />
-				<Route path="schedule/*"></Route>
+				<Route path="schedule/*" element={<ScheduleRoute />} />
 				<Route path="manage/*">
 					<Route path="contract/*" element={<ContractRoute />} />
-					<Route path="device" />
+					<Route path="device/*" element={<DeviceRoute />} />
 					<Route path="user" />
 					<Route path="company" />
 				</Route>

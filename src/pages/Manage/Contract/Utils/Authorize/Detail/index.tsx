@@ -10,7 +10,13 @@ const ContractAuthorizeDetailPage = () => {
 	const [left, setLeft] = useState<boolean>(true);
 
 	return (
-		<LayoutPage>
+		<LayoutPage
+			heading={`Chi tiết hợp đồng ủy quyền bài hát - ${"ID"}`}
+			breadcrumbData={[
+				{ name: "Quản lý", path: "?" },
+				{ name: "Quản lý hợp đồng", path: "/manage/contract" },
+				{ name: "Chi tiết", path: "/manage/contract/authorize/detail" },
+			]}>
 			<div className={style.container}>
 				<TabButtons left={left} setLeft={setLeft} />
 				{left ? <ContractInfo /> : <SongInfo />}

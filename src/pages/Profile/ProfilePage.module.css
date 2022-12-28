@@ -1,7 +1,9 @@
 .container {
+	padding-top: 2em;
 	width: 70%;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 2fr;
+	gap: 2em;
 }
 
 .leftContainer {
@@ -13,7 +15,7 @@
 }
 
 .image {
-	--diameter: 20rem;
+	--diameter: 15rem;
 	width: var(--diameter);
 	aspect-ratio: 1/1;
 	background-color: pink;

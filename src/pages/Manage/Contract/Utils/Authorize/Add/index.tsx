@@ -39,7 +39,13 @@ const ContractAuthorizeAddPage = () => {
 	);
 
 	return (
-		<LayoutPage>
+		<LayoutPage
+			heading="Thêm hợp đồng ủy quyền mới"
+			breadcrumbData={[
+				{ name: "Quản lý", path: "?" },
+				{ name: "Quản lý hợp đồng", path: "/manage/contract" },
+				{ name: "Thêm hợp đồng", path: "/manage/contract/authorize/add" },
+			]}>
 			<Form
 				form={form}
 				onFinish={(values) => {

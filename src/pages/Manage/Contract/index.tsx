@@ -11,7 +11,12 @@ const ContractPage = () => {
 	const [left, setLeft] = useState<boolean>(true);
 
 	return (
-		<LayoutPage>
+		<LayoutPage
+			heading="Danh sách hợp đồng"
+			breadcrumbData={[
+				{ name: "Quản lý", path: "?" },
+				{ name: "Quản lý hợp đồng", path: "/manage/contract" },
+			]}>
 			<div className={style.container}>
 				<TabButtons left={left} setLeft={setLeft} />
 				{left ? <AuthorizedContract /> : <ExploitedContract />}

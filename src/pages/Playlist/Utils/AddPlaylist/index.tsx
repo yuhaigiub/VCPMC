@@ -8,7 +8,12 @@ import TwoButtonsWrapper from "../../../../components/static/TwoButtonsWrapper";
 
 const AddPlaylistPage = () => {
 	return (
-		<LayoutPage>
+		<LayoutPage
+			heading="Thêm Playlist"
+			breadcrumbData={[
+				{ name: "Playlist", path: "?" },
+				{ name: "Thêm Playlist mới", path: "/playlist/add" },
+			]}>
 			<div className={style.container}>
 				<div className={style.containerLeft}>
 					<div>

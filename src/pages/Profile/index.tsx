@@ -7,7 +7,7 @@ import LayoutPage from "../../components/Layouts/Page/LayoutPage";
 
 const ProfilePage = () => {
 	return (
-		<LayoutPage>
+		<LayoutPage heading="Thông tin cơ bản">
 			<div className={style.container}>
 				<div className={style.leftContainer}>
 					<div className={style.image}>

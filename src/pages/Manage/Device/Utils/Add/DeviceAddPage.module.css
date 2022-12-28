@@ -1,0 +1,22 @@
+.container {
+	width: 90%;
+	/* height: 90%; */
+	margin-top: 2em;
+	margin-bottom: 3em;
+	display: grid;
+	grid-template-columns: 1fr 0.5fr 1fr;
+}
+
+.leftContainer {
+	grid-column: 1/2;
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
+}
+
+.rightContainer {
+	grid-column: 3/4;
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
+}

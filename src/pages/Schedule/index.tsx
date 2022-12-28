@@ -1,16 +1,13 @@
 import React from "react";
-
 import LayoutPage from "../../components/Layouts/Page/LayoutPage";
 import TableWrapper from "../../components/static/TableWrapper";
 
-const RecordPage = () => {
+const SchedulePage = () => {
 	return (
-		<LayoutPage heading="Kho bản ghi">
-			<div>
-				<TableWrapper />
-			</div>
+		<LayoutPage heading="Danh sách lịch phát">
+			<TableWrapper />
 		</LayoutPage>
 	);
 };
 
-export default RecordPage;
+export default SchedulePage;

@@ -7,7 +7,12 @@ import { Input } from "antd";
 
 const RecordEditPage = () => {
 	return (
-		<LayoutPage>
+		<LayoutPage
+			heading={`Bản ghi - ${"Name"}`}
+			breadcrumbData={[
+				{ name: "Bản ghi", path: "?" },
+				{ name: "Cập nhật thông tin", path: "/record/edit" },
+			]}>
 			<div className={style.container}>
 				<div className={style.first}>
 					<div className={style.title}>Thông tin bản ghi</div>
