@@ -3,6 +3,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
+import CompanyRoute from "./routes/Manage/Company";
 import ContractRoute from "./routes/Manage/Contract";
 import DeviceRoute from "./routes/Manage/Device";
 import PlaylistRoute from "./routes/Playlist";
@@ -23,7 +24,7 @@ const App = () => {
 					<Route path="contract/*" element={<ContractRoute />} />
 					<Route path="device/*" element={<DeviceRoute />} />
 					<Route path="user" />
-					<Route path="company" />
+					<Route path="company/*" element={<CompanyRoute />} />
 				</Route>
 				<Route path="statistic/*">
 					<Route path="report" />

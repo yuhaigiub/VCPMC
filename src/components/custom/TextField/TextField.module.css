@@ -1,6 +1,6 @@
 .field {
 	display: grid;
-	grid-template-columns: 1fr 1.25fr;
+	grid-template-columns: 1fr 1.5fr;
 	align-items: center;
 }
 .title {
@@ -11,4 +11,5 @@
 
 .value {
 	color: rgb(166, 166, 166, 0.8);
+	/* background-color: red; */
 }

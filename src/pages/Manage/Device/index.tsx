@@ -8,7 +8,12 @@ import TableWrapper from "../../../components/static/TableWrapper";
 
 const DevicePage = () => {
 	return (
-		<LayoutPage heading="Danh sách thiết bị">
+		<LayoutPage
+			heading="Danh sách thiết bị"
+			breadcrumbData={[
+				{ name: "Quản lý", path: "?" },
+				{ name: "Danh sách thiết bị", path: "/manage/device" },
+			]}>
 			<div className={style.container}>
 				<div className={`${style.searchContainer} ${style.flexContainer}`}>
 					<div className={style.searchContainerLeft}>
