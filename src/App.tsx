@@ -11,6 +11,7 @@ import PlaylistRoute from "./routes/Playlist";
 import ProfileRoute from "./routes/Profile";
 import RecordRoute from "./routes/Record";
 import ScheduleRoute from "./routes/Schedule";
+import RoleRoute from "./routes/Setting/Role";
 
 const App = () => {
 	return (
@@ -32,7 +33,13 @@ const App = () => {
 					<Route path="history" />
 					<Route path="distribute" />
 				</Route>
-				<Route path="setting/*"></Route>
+				<Route path="setting/*">
+					<Route path="role/*" element={<RoleRoute />} />
+					<Route path="theme" />
+					<Route path="contractType" />
+					<Route path="gerne" />
+					<Route path="system" />
+				</Route>
 				<Route path="support"></Route>
 			</Route>
 		</Routes>

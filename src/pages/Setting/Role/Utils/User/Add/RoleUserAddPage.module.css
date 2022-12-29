@@ -1,0 +1,14 @@
+.container {
+	width: 80%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 5em;
+	margin-bottom: 3em;
+}
+
+.leftContainer,
+.rightContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5em;
+}
