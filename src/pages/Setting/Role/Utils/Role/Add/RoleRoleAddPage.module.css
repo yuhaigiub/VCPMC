@@ -1,0 +1,53 @@
+.container {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 5em;
+}
+
+.title {
+	color: white;
+	font-weight: 700;
+	font-size: 1.1rem;
+}
+
+.leftContainer,
+.rightContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 3em;
+}
+
+.fieldContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+.roleContainer {
+	background-color: var(--table-background);
+	border-radius: 5px;
+	padding: 1em;
+}
+
+.roleHeaderContainer {
+	display: grid;
+	grid-template-columns: 1fr 1fr 2fr;
+	border-bottom: 1px solid white;
+	padding-bottom: 2em;
+}
+
+.roleHeader {
+	color: var(--text-orange);
+	font-weight: 700;
+	user-select: none;
+}
+
+.fieldWithCheckbox {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+}
+
+.checkboxClass {
+	width: 2rem;
+}

@@ -32,6 +32,11 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 							colorIconHover: "#fff",
 							colorTextDisabled: "#ff7506",
 						},
+						Checkbox: {
+							// colorBgContainer: "#fff",
+							colorBorder: "#347aff",
+							fontSize: 16,
+						},
 					},
 				}}>
 				<App />

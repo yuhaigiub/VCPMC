@@ -1,12 +1,14 @@
 import React, { useState, useMemo } from "react";
 import style from "./RolePage.module.css";
+
 import { useNavigate } from "react-router-dom";
 import { Input } from "antd";
 
 import LayoutPage from "../../../components/Layouts/Page/LayoutPage";
-import TableWrapper from "../../../components/static/TableWrapper";
 import TabButtons from "../../../components/static/TabButtons";
 import { QuickButtonType } from "../../../types/interface";
+import RoleUserList from "./Utils/User";
+import RoleRoleList from "./Utils/Role";
 
 const RolePage = () => {
 	const navigate = useNavigate();
@@ -53,11 +55,3 @@ const RolePage = () => {
 };
 
 export default RolePage;
-
-const RoleUserList = () => {
-	return <TableWrapper maxRow={6} />;
-};
-
-const RoleRoleList = () => {
-	return <TableWrapper maxRow={8} />;
-};
