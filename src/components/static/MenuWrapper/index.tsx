@@ -2,6 +2,15 @@ import React from "react";
 
 import { Menu, ConfigProvider } from "antd";
 import { MenuProps } from "rc-menu";
+import MenuItem from "./MenuItem";
+import RecordIcon from "../../../icons/RecordIcon";
+import PlaylistIcon from "../../../icons/PlaylistIcon";
+import ScheduleIcon from "../../../icons/ScheduleIcon";
+import ManageIcon from "../../../icons/ManageIcon";
+import StatisticIcon from "../../../icons/StatisticIcon";
+import SettingIcon from "../../../icons/SettingIcon";
+import SupportIcon from "../../../icons/SupportIcon";
+import ExpandIcon from "../../../icons/ExpandIcon";
 
 const MenuWrapper = () => {
 	return (
@@ -20,7 +29,7 @@ const MenuWrapper = () => {
 					},
 				},
 			}}>
-			<Menu items={items} theme="dark" />
+			<Menu items={items} theme="dark" expandIcon={<ExpandIcon />} />
 		</ConfigProvider>
 	);
 };
@@ -28,11 +37,11 @@ const MenuWrapper = () => {
 export default MenuWrapper;
 
 const items: MenuProps["items"] = [
-	{ label: "Kho bản ghi", key: "1" },
-	{ label: "Playlist", key: "2" },
-	{ label: "Lập lịch phát", key: "3" },
+	{ label: <MenuItem title="Kho bản ghi" icon={<RecordIcon />} />, key: "1" },
+	{ label: <MenuItem title="Playlist" icon={<PlaylistIcon />} />, key: "2" },
+	{ label: <MenuItem title="Lập lịch phát" icon={<ScheduleIcon />} />, key: "3" },
 	{
-		label: "Quản lý",
+		label: <MenuItem title="Quản lý" icon={<ManageIcon />} />,
 		key: "4",
 		children: [
 			{ label: "Quản lý hợp đồng", key: "4.1" },
@@ -42,7 +51,7 @@ const items: MenuProps["items"] = [
 		],
 	},
 	{
-		label: "Doanh thu",
+		label: <MenuItem title="Doanh thu" icon={<StatisticIcon />} />,
 		key: "5",
 		children: [
 			{ label: "Báo cáo doanh thu", key: "5.1" },
@@ -51,7 +60,7 @@ const items: MenuProps["items"] = [
 		],
 	},
 	{
-		label: "Cài đặt",
+		label: <MenuItem title="Cài đặt" icon={<SettingIcon />} />,
 		key: "6",
 		children: [
 			{ label: "Phân quyền người dùng", key: "6.1" },
@@ -62,7 +71,7 @@ const items: MenuProps["items"] = [
 		],
 	},
 	{
-		label: "Hỗ trợ",
+		label: <MenuItem title="Hỗ trợ" icon={<SupportIcon />} />,
 		key: "7",
 		children: [
 			{ label: "Hướng dẫn sử dụng", key: "7.1" },

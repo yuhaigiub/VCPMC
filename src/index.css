@@ -5,7 +5,7 @@
 	--menu-background: #020220;
 	--table-background: rgba(47, 47, 65, 0.7);
 	--text-orange: #ff7506;
-	--menu-width: calc(100vw / 24 * 2);
+	--menu-width: calc(100vw / 24 * 1.8);
 	--container-padding-top: 3rem;
 	--container-padding-right: 6rem;
 	--container-padding-left: 2rem;
@@ -55,6 +55,34 @@ body {
 	width: 3px;
 	position: absolute;
 	left: 0;
+}
+
+.ant-menu-item,
+.ant-menu-submenu-title {
+	overflow: visible !important;
+	height: fit-content !important;
+	display: flex !important;
+}
+
+.ant-menu-submenu-title > span[class="anticon"] svg {
+	flex-shrink: 0;
+	width: 30px;
+}
+
+.ant-menu-item:hover svg g path,
+.ant-menu-item-selected svg g path,
+.ant-menu-submenu-title:hover svg g path,
+.ant-menu-submenu-selected svg g path {
+	/* fill: var(--text-orange) !important; */
+	stroke: var(--text-orange) !important;
+}
+
+.ant-menu-item:hover svg > path,
+.ant-menu-item-selected svg > path,
+.ant-menu-submenu-title:hover svg > path,
+.ant-menu-submenu-selected svg > path {
+	fill: var(--text-orange) !important;
+	stroke: var(--text-orange) !important;
 }
 
 .ant-input,
