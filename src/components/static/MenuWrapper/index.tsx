@@ -1,8 +1,8 @@
 import React from "react";
 
 import { Menu, ConfigProvider } from "antd";
-import { MenuProps } from "rc-menu";
 import MenuItem from "./MenuItem";
+
 import RecordIcon from "../../../icons/RecordIcon";
 import PlaylistIcon from "../../../icons/PlaylistIcon";
 import ScheduleIcon from "../../../icons/ScheduleIcon";
@@ -12,7 +12,15 @@ import SettingIcon from "../../../icons/SettingIcon";
 import SupportIcon from "../../../icons/SupportIcon";
 import ExpandIcon from "../../../icons/ExpandIcon";
 
+import type { MenuProps } from "antd";
+import { useNavigate } from "react-router-dom";
+
 const MenuWrapper = () => {
+	const navigate = useNavigate();
+	const handleClick: MenuProps["onClick"] = (e) => {
+		navigate(`/${e.key}`);
+	};
+
 	return (
 		<ConfigProvider
 			theme={{
@@ -29,7 +37,7 @@ const MenuWrapper = () => {
 					},
 				},
 			}}>
-			<Menu items={items} theme="dark" expandIcon={<ExpandIcon />} />
+			<Menu items={items} theme="dark" expandIcon={<ExpandIcon />} onClick={handleClick} />
 		</ConfigProvider>
 	);
 };
@@ -37,46 +45,46 @@ const MenuWrapper = () => {
 export default MenuWrapper;
 
 const items: MenuProps["items"] = [
-	{ label: <MenuItem title="Kho bản ghi" icon={<RecordIcon />} />, key: "1" },
-	{ label: <MenuItem title="Playlist" icon={<PlaylistIcon />} />, key: "2" },
-	{ label: <MenuItem title="Lập lịch phát" icon={<ScheduleIcon />} />, key: "3" },
+	{ label: <MenuItem title="Kho bản ghi" icon={<RecordIcon />} />, key: "record" },
+	{ label: <MenuItem title="Playlist" icon={<PlaylistIcon />} />, key: "playlist" },
+	{ label: <MenuItem title="Lập lịch phát" icon={<ScheduleIcon />} />, key: "schedule" },
 	{
 		label: <MenuItem title="Quản lý" icon={<ManageIcon />} />,
-		key: "4",
+		key: "manage",
 		children: [
-			{ label: "Quản lý hợp đồng", key: "4.1" },
-			{ label: "Quản lý khách hàng", key: "4.2" },
-			{ label: "Đơn vị ủy quyền", key: "4.3" },
-			{ label: "Đơn vị sử dụng", key: "4.4" },
+			{ label: "Quản lý hợp đồng", key: "manage/contract" },
+			{ label: "Quản lý thiết bị", key: "manage/device" },
+			{ label: "Đơn vị ủy quyền", key: "manage/user" },
+			{ label: "Đơn vị sử dụng", key: "manage/company" },
 		],
 	},
 	{
 		label: <MenuItem title="Doanh thu" icon={<StatisticIcon />} />,
-		key: "5",
+		key: "statistic",
 		children: [
-			{ label: "Báo cáo doanh thu", key: "5.1" },
-			{ label: "Lịch sử đối soát", key: "5.2" },
-			{ label: "Phân phối doanh thu", key: "5.3" },
+			{ label: "Báo cáo doanh thu", key: "statistic/report" },
+			{ label: "Lịch sử đối soát", key: "statistic/history" },
+			{ label: "Phân phối doanh thu", key: "statistic/distribute" },
 		],
 	},
 	{
 		label: <MenuItem title="Cài đặt" icon={<SettingIcon />} />,
-		key: "6",
+		key: "setting",
 		children: [
-			{ label: "Phân quyền người dùng", key: "6.1" },
-			{ label: "Cấu hình", key: "6.2" },
-			{ label: "Quản lý hợp đồng", key: "6.3" },
-			{ label: "Thông tin sản phẩm", key: "6.4" },
-			{ label: "Chu kỳ đối soát", key: "6.5" },
+			{ label: "Phân quyền người dùng", key: "setting/role" },
+			{ label: "Cấu hình", key: "theme" },
+			{ label: "Quản lý hợp đồng", key: "setting/contract" },
+			{ label: "Thông tin tác phẩm", key: "setting/gerne" },
+			{ label: "Chu kỳ đối soát", key: "setting/system" },
 		],
 	},
 	{
 		label: <MenuItem title="Hỗ trợ" icon={<SupportIcon />} />,
 		key: "7",
 		children: [
-			{ label: "Hướng dẫn sử dụng", key: "7.1" },
-			{ label: "Tải app", key: "7.2" },
-			{ label: "Feedback", key: "7.3" },
+			{ label: "Hướng dẫn sử dụng", key: "support/how-to" },
+			{ label: "Tải app", key: "support/download" },
+			{ label: "Feedback", key: "support/feedback" },
 		],
 	},
 ];
