@@ -44,4 +44,5 @@
 
 .button:hover {
 	scale: 1.1;
+	filter: grayscale(0.2);
 }
