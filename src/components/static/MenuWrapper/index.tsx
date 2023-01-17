@@ -72,8 +72,8 @@ const items: MenuProps["items"] = [
 		key: "setting",
 		children: [
 			{ label: "Phân quyền người dùng", key: "setting/role" },
-			{ label: "Cấu hình", key: "theme" },
-			{ label: "Quản lý hợp đồng", key: "setting/contract" },
+			{ label: "Cấu hình", key: "setting/theme" },
+			{ label: "Quản lý hợp đồng", key: "setting/contract-type" },
 			{ label: "Thông tin tác phẩm", key: "setting/gerne" },
 			{ label: "Chu kỳ đối soát", key: "setting/system" },
 		],

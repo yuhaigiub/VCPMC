@@ -37,6 +37,10 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 							colorBorder: "#347aff",
 							fontSize: 16,
 						},
+						Radio: {
+							colorBorder: "#ff7506",
+							borderRadius: 10,
+						},
 					},
 				}}>
 				<App />
