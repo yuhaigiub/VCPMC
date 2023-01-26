@@ -4,7 +4,7 @@ import { Table, ConfigProvider } from "antd";
 
 import type { ColumnsType } from "antd/es/table";
 
-const TableWrapper: React.FC<Props> = ({ maxRow = 9 }) => {
+const TableWrapper: React.FC<Props> = ({ maxRow = 9, columns = [], dataSource = [] }) => {
 	return (
 		<ConfigProvider
 			theme={{
@@ -48,6 +48,8 @@ export default TableWrapper;
 
 interface Props {
 	maxRow?: number;
+	dataSource?: any[];
+	columns?: ColumnsType<any>;
 }
 
 interface DataType {
