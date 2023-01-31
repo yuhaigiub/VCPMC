@@ -6,7 +6,7 @@ import { Input } from "antd";
 
 import LayoutPage from "../../../components/Layouts/Page/LayoutPage";
 import TabButtons from "../../../components/static/TabButtons";
-import { QuickButtonType } from "../../../types/interface";
+import { QuickButtonType } from "../../../types/component";
 import RoleUserList from "./Utils/User";
 import RoleRoleList from "./Utils/Role";
 

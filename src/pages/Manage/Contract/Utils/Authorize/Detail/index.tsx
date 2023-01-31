@@ -8,7 +8,7 @@ import SongInfo from "./SongInfo";
 import LayoutPage from "../../../../../../components/Layouts/Page/LayoutPage";
 import TabButtons from "../../../../../../components/static/TabButtons";
 
-import { QuickButtonType } from "../../../../../../types/interface";
+import { QuickButtonType } from "../../../../../../types/component";
 
 const ContractAuthorizeDetailPage = () => {
 	const navigate = useNavigate();
