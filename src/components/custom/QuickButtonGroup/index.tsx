@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./QuickButtonGroup.module.css";
 
-import { QuickButtonType } from "../../../types/interface";
+import { QuickButtonType } from "../../../types/component";
 import QuickButton from "./QuickButton";
 
 const QuickButtonGroup: React.FC<Props> = ({ items = [] }) => {

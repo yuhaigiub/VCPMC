@@ -1,5 +1,5 @@
 import React from "react";
-import { QuickButtonItem } from "../../../../types/interface";
+import { QuickButtonItem } from "../../../../types/component";
 import style from "./QuickButton.module.css";
 
 const QuickButton: React.FC<Props> = ({ item }) => {

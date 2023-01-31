@@ -6,7 +6,7 @@ import LayoutContent from "../../NonPage/LayoutContent";
 import QuickButtonGroup from "../../../custom/QuickButtonGroup";
 import LayoutContentInner from "../../NonPage/LayoutContentInner";
 import BreadcrumbWrapper from "../../../custom/BreadcrumbWrapper";
-import { BreadcrumbType, QuickButtonType } from "../../../../types/interface";
+import { BreadcrumbType, QuickButtonType } from "../../../../types/component";
 
 const LayoutPage: React.FC<Props> = ({ children, breadcrumbData, heading, quickButtonData }) => {
 	return (

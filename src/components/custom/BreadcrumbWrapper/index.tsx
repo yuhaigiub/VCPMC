@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { BreadcrumbType } from "../../../types/interface";
+import { BreadcrumbType } from "../../../types/component";
 import style from "./BreadcrumbWrapper.module.css";
 
 const BreadcrumbWrapper: React.FC<Props> = ({ items = [] }) => {
