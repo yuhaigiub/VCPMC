@@ -1,0 +1,21 @@
+your app have RECORDS:
+	- each RECORDS belong to one or more GERNES
+	- each RECORDS have a CONTRACT number
+	- to create a new RECORD, you need to create a CONTRACT
+your app have CONTRACTS:
+	- each CONTRACT belong to a USER
+	- each CONTRACT create one RECORD
+your app have GERNES:
+	- each GERNE has a unique key
+your app have PLAYLISTS:
+	- each PLAYLIST consist of one or more RECORDS
+your app have SCHEDULES:
+	- each SCHEDULE will play one or more PLAYLISTS on one or more DEVICES
+your app have DEVICES:
+	- each DEVICE has a unique key
+your app have ROLES:
+	- each ROLE have different access to actions that they can perform on the app
+	- each ROLE will keep track of the number of users having it
+your app have USERS:
+	- each USER has a ROLE
+
