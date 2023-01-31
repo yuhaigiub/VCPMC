@@ -20,6 +20,8 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
 		return signInWithEmailAndPassword(auth, email, password);
 	};
 
+	
+
 	const value = {
 		currentUser,
 		signIn,
