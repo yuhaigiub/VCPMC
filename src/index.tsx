@@ -10,6 +10,14 @@ import store from "./app/store";
 import { Provider } from "react-redux";
 
 import App from "./App";
+import { getAllRoles } from "./slices/roles/reducers";
+import { getAllGernes } from "./slices/gernes/reducers";
+import { getAllUsers } from "./slices/users/reducers";
+
+// pre-fetch
+store.dispatch(getAllRoles());
+store.dispatch(getAllUsers());
+store.dispatch(getAllGernes());
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<React.StrictMode>

@@ -1,4 +1,5 @@
 import { Form, Input, DatePicker, Select } from "antd";
+import SelectWithCustomTags from "../../static/SelectWithCustomTags";
 
 export const FormWrapInput: React.FC<{ name: string }> = ({ name }) => {
 	return (
@@ -32,6 +33,14 @@ export const FormWrapSelect: React.FC<{ name: string }> = ({ name }) => {
 	return (
 		<Form.Item name={name} noStyle>
 			<Select style={{ width: "100%" }} />
+		</Form.Item>
+	);
+};
+
+export const FormWrapSelectWithCustomTag: React.FC<{ name: string }> = ({ name }) => {
+	return (
+		<Form.Item name={name} noStyle>
+			<SelectWithCustomTags />
 		</Form.Item>
 	);
 };

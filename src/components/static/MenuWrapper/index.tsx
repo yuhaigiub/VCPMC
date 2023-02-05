@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Menu, ConfigProvider } from "antd";
+import { Menu } from "antd";
 import MenuItem from "./MenuItem";
 
 import RecordIcon from "../../../icons/RecordIcon";
@@ -21,25 +21,7 @@ const MenuWrapper = () => {
 		navigate(`/${e.key}`);
 	};
 
-	return (
-		<ConfigProvider
-			theme={{
-				components: {
-					Menu: {
-						radiusItem: 0,
-						itemMarginInline: 0,
-						colorItemText: "#fff",
-						colorItemBg: "#020220",
-						colorItemTextHover: "#ff7506",
-						colorItemBgHover: "#2c2c2c",
-						colorItemTextSelected: "#ff7506",
-						colorItemBgSelected: "#1e1e2e",
-					},
-				},
-			}}>
-			<Menu items={items} theme="dark" expandIcon={<ExpandIcon />} onClick={handleClick} />
-		</ConfigProvider>
-	);
+	return <Menu items={items} theme="dark" expandIcon={<ExpandIcon />} onClick={handleClick} />;
 };
 
 export default MenuWrapper;
@@ -54,17 +36,17 @@ const items: MenuProps["items"] = [
 		children: [
 			{ label: "Quản lý hợp đồng", key: "manage/contract" },
 			{ label: "Quản lý thiết bị", key: "manage/device" },
-			{ label: "Đơn vị ủy quyền", key: "manage/user" },
-			{ label: "Đơn vị sử dụng", key: "manage/company" },
+			// { label: "Đơn vị ủy quyền", key: "manage/user" },
+			// { label: "Đơn vị sử dụng", key: "manage/company" },
 		],
 	},
 	{
 		label: <MenuItem title="Doanh thu" icon={<StatisticIcon />} />,
 		key: "statistic",
 		children: [
-			{ label: "Báo cáo doanh thu", key: "statistic/report" },
-			{ label: "Lịch sử đối soát", key: "statistic/history" },
-			{ label: "Phân phối doanh thu", key: "statistic/distribute" },
+			// { label: "Báo cáo doanh thu", key: "statistic/report" },
+			// { label: "Lịch sử đối soát", key: "statistic/history" },
+			// { label: "Phân phối doanh thu", key: "statistic/distribute" },
 		],
 	},
 	{
@@ -82,9 +64,9 @@ const items: MenuProps["items"] = [
 		label: <MenuItem title="Hỗ trợ" icon={<SupportIcon />} />,
 		key: "7",
 		children: [
-			{ label: "Hướng dẫn sử dụng", key: "support/how-to" },
-			{ label: "Tải app", key: "support/download" },
-			{ label: "Feedback", key: "support/feedback" },
+			// { label: "Hướng dẫn sử dụng", key: "support/how-to" },
+			// { label: "Tải app", key: "support/download" },
+			// { label: "Feedback", key: "support/feedback" },
 		],
 	},
 ];

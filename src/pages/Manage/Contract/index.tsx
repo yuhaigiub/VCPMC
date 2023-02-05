@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import style from "./ContractPage.module.css";
 
 import { useNavigate } from "react-router-dom";
 
 import LayoutPage from "../../../components/Layouts/Page/LayoutPage";
-import TabButtons from "../../../components/static/TabButtons";
 import ContractAuthorizeList from "./Utils/Authorize";
-import ContractExploitList from "./Utils/Exploit";
+import { useAppDispatch, useAppSelector } from "../../../app/store";
+import { getAllContractsQuery } from "../../../slices/contracts/selectors";
+import { getAllContracts } from "../../../slices/contracts/reducers";
 
 const ContractPage = () => {
 	const navigate = useNavigate();
-	const [left, setLeft] = useState<boolean>(true);
+	const dispatch = useAppDispatch();
+	const data = useAppSelector(getAllContractsQuery);
+
+	useEffect(() => {
+		dispatch(getAllContracts()).then((res) => console.log("fetch contracts"));
+	}, []);
 
 	return (
 		<LayoutPage
@@ -23,17 +29,12 @@ const ContractPage = () => {
 				{
 					description: "Thêm hợp đồng",
 					onClick: () => {
-						if (left) {
-							navigate("/manage/contract/authorize/add");
-						} else {
-							navigate("/manage/contract/exploit/add");
-						}
+						navigate("/manage/contract/authorize/add");
 					},
 				},
 			]}>
 			<div className={style.container}>
-				<TabButtons left={left} setLeft={setLeft} />
-				{left ? <ContractAuthorizeList /> : <ContractExploitList />}
+				<ContractAuthorizeList data={data} />
 			</div>
 		</LayoutPage>
 	);

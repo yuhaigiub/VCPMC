@@ -1,87 +1,129 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./ContractAuthorizeEditPage.module.css";
-
 import { Radio, Form } from "antd";
-import {
-	FormWrapInput,
-	FormWrapTextArea,
-	FormWrapDatePicker,
-	FormWrapSelect,
-} from "../../../../../../components/custom/FormWrap";
+import { FormWrapInput, FormWrapDatePicker } from "../../../../../../components/custom/FormWrap";
 
 import TextField from "../../../../../../components/custom/TextField";
 import LayoutPage from "../../../../../../components/Layouts/Page/LayoutPage";
 import TwoButtonsWrapper from "../../../../../../components/static/TwoButtonsWrapper";
+import SelectWithCustomTags from "../../../../../../components/static/SelectWithCustomTags";
+import { ContractTable, UserTable } from "../../../../../../types/data";
+import { useAppDispatch, useAppSelector } from "../../../../../../app/store";
+import { getContract, updateContract } from "../../../../../../slices/contracts/reducers";
+import { useNavigate, useParams } from "react-router-dom";
+import dayjs from "dayjs";
+import { getRecordfromContractId } from "../../../../../../slices/records/reducers";
+import { getAllGernesQuery } from "../../../../../../slices/gernes/selectors";
+import { getUser, getUserByUsername, updateUser } from "../../../../../../slices/users/reducers";
 
 const ContractAuthorizeEditPage = () => {
+	const navigate = useNavigate();
+	const dispatch = useAppDispatch();
+
+	const { key } = useParams();
 	const [form] = Form.useForm();
-	const [isIndividual, setIsIndividual] = useState<boolean>(false);
 
-	const typeRadio = (
-		<Form.Item name="type" noStyle>
-			<Radio.Group>
-				<Radio value={true} disabled={isIndividual !== true}>
-					Cá nhân
-				</Radio>
-				<Radio value={false} disabled={isIndividual !== false}>
-					Tổ chức
-				</Radio>
-			</Radio.Group>
-		</Form.Item>
-	);
+	const gernesList = useAppSelector(getAllGernesQuery);
+	const [gernes, setGernes] = useState<any>([]);
 
-	const genderRadio = (
-		<Form.Item name="gender" noStyle>
-			<Radio.Group>
-				<Radio value="male">Nam</Radio>
-				<Radio value="female">Nữ</Radio>
-			</Radio.Group>
-		</Form.Item>
-	);
+	useEffect(() => {
+		dispatch(getContract(key as string))
+			.unwrap()
+			.then((contract) => {
+				if (contract !== null) {
+					dispatch(getRecordfromContractId(contract.key))
+						.unwrap()
+						.then((record) => {
+							if (record !== null) {
+								console.log(contract.userId);
+								dispatch(getUser(contract.userId))
+									.unwrap()
+									.then((user) => {
+										if (user !== null) {
+											form.setFieldsValue({
+												contractName: contract.contractName,
+												dateExpired: dayjs(contract.dateExpired),
+												recordName: record.recordName,
+												singerName: record.singerName,
+												username: user.username,
+												password: user.password,
+												gender: user.gender,
+											});
+											setGernes(record.gernes);
+										} else {
+											console.log("no user was found");
+											navigate(-1);
+										}
+									});
+							} else {
+								console.log("no record was found");
+								navigate(-1);
+							}
+						});
+				} else {
+					console.log("no contract was found");
+					navigate(-1);
+				}
+			});
+	}, []);
 
 	return (
 		<LayoutPage
-			heading={`Hợp đồng ủy quyền bài hát - ${"ID"}`}
+			heading="Chỉnh sửa thông tin hợp đồng"
 			breadcrumbData={[
 				{ name: "Quản lý", path: "?" },
 				{ name: "Quản lý hợp đồng", path: "/manage/contract" },
-				{ name: "Chi tiết", path: "/manage/contract/authorize/detail" },
-				{ name: "Chỉnh sửa thông tin", path: "/manage/contract/authorize/edit" },
+				{ name: "Chỉnh sửa hợp đồng", path: "/manage/contract/authorize/edit" },
 			]}>
 			<Form
 				form={form}
 				onFinish={(values) => {
-					console.log(values);
+					dispatch(getUserByUsername(values.username))
+						.unwrap()
+						.then((user) => {
+							if (user !== null && user.password === values.password) {
+								const contractData: ContractTable = {
+									key: key as string,
+									contractName: values.contractName,
+									dateCreated: new Date(),
+									dateExpired: values.dateExpired.toDate(),
+									userId: user.key,
+								};
+								dispatch(updateContract(contractData))
+									.unwrap()
+									.then((contract) => {
+										navigate(-1);
+									});
+							} else {
+								console.log("invalid user");
+							}
+						});
 				}}
-				initialValues={{ type: isIndividual, gender: "male" }}
 				style={{ width: "100%", height: "100%" }}>
 				<div className={style.container}>
 					<div className={style.subContainer}>
-						<TopLeft />
+						<TextField title="Tên hợp đồng" value={<FormWrapInput name="contractName" />} />
+						<TextField title="Ngày hết hạn" value={<FormWrapDatePicker name="dateExpired" />} />
+						<TextField title="Tên đăng nhập" value={<FormWrapInput name="username" />} />
+						<TextField title="Mật khẩu" value={<FormWrapInput name="password" />} />
 					</div>
+					<div className={style.subContainer}>Thêm bản ghi bài hát: TODO</div>
+					<div className={style.subContainerTitle}>Thông tin bài hát</div>
 					<div className={style.subContainer}>
-						<TextField title="Đính kèm tệp" />
-					</div>
-					<div className={style.subContainer}>
-						<div className={style.subContainerTitle}>Mức nhuận bút</div>
-						<TextField title="Quyền tác giả" />
-						<TextField title="Quyền liên quan" />
-						<TextField title="Quyền của người biểu diễn" boldTitle={false} />
-						<TextField title="Quyền của nhà sản xuất (Bản ghi/video)" boldTitle={false} />
-					</div>
-					<div className={style.subContainerTitle}>Thông tin Pháp nhân ủy quyền</div>
-					<div className={style.subContainer}>
-						<BottomLeft
-							typeRadio={typeRadio}
-							genderRadio={genderRadio}
-							isIndividual={isIndividual}
+						<TextField title="Tên bài hát" value={<FormWrapInput name="recordName" />} />
+						<TextField
+							title="Thể loại"
+							value={
+								<SelectWithCustomTags
+									value={gernes}
+									setValue={setGernes}
+									options={gernesList.map((gerne) => {
+										return { label: gerne.name, value: gerne.key };
+									})}
+								/>
+							}
 						/>
-					</div>
-					<div className={style.subContainer}>
-						<BottomMid isIndividual={isIndividual} genderRadio={genderRadio} />
-					</div>
-					<div className={style.subContainer}>
-						<BottomRight isIndividual={isIndividual} />
+						<TextField title="Tên ca sĩ" value={<FormWrapInput name="singerName" />} />
 					</div>
 				</div>
 				<TwoButtonsWrapper />
@@ -91,89 +133,3 @@ const ContractAuthorizeEditPage = () => {
 };
 
 export default ContractAuthorizeEditPage;
-
-const TopLeft = () => {
-	return (
-		<>
-			<TextField title="Số hợp đồng" value={<FormWrapInput name="contractNumber" />} />
-			<TextField title="Tên hợp đồng" value={<FormWrapInput name="contractName" />} />
-			<TextField title="Ngày hiệu lực" value={<FormWrapDatePicker name="contractStartDate" />} />
-			<TextField title="Ngày hết hạn" value={<FormWrapDatePicker name="contractEndDate" />} />
-		</>
-	);
-};
-
-const BottomLeft: React.FC<{
-	typeRadio: React.ReactNode;
-	genderRadio: React.ReactNode;
-	isIndividual: boolean;
-}> = ({ typeRadio, genderRadio, isIndividual }) => {
-	return (
-		<>
-			<TextField title="Pháp nhân ủy quyền" value={typeRadio} />
-			{isIndividual ? (
-				<>
-					<TextField title="Tên người ủy quyền" value={<FormWrapInput name="name" />} />
-					<TextField title="Ngày sinh" value={<FormWrapDatePicker name="dateOfBirth" />} />
-					<TextField title="Giới tính" value={genderRadio} />
-					<TextField title="Quốc tịch" value={<FormWrapSelect name="country" />} />
-					<TextField title="Số điện thoại" value={<FormWrapInput name="phone" />} />
-				</>
-			) : (
-				<>
-					<TextField title="Tên tổ chức" value={<FormWrapInput name="organizationName" />} />
-					<TextField title="Mã số thuế" value={<FormWrapInput name="organizationTaxNumber" />} />
-					<TextField title="Số tài khoản" value={<FormWrapInput name="organizationBankNumber" />} />
-					<TextField title="Ngân hàng" value={<FormWrapInput name="organizationBankName" />} />
-					<TextField title="Địa chỉ" value={<FormWrapTextArea name="organizationAddress" />} />
-				</>
-			)}
-		</>
-	);
-};
-
-const BottomMid: React.FC<{ isIndividual: boolean; genderRadio: React.ReactNode }> = ({
-	isIndividual,
-	genderRadio,
-}) => {
-	return isIndividual ? (
-		<>
-			<TextField title="Số CMND/CCCD" value={<FormWrapInput name="idCardNumber" />} />
-			<TextField title="Ngày cấp" value={<FormWrapDatePicker name="idCardStartDate" />} />
-			<TextField title="Nơi cấp" value={<FormWrapInput name="idCardAddress" />} />
-			<TextField title="Mã số thuế" value={<FormWrapInput name="taxNumber" />} />
-			<TextField title="Nơi cư trú" value={<FormWrapTextArea name="address" />} />
-		</>
-	) : (
-		<>
-			<TextField title="Người đại diện" value={<FormWrapInput name="name" />} />
-			<TextField title="Chức vụ" value={<FormWrapInput name="role" />} />
-			<TextField title="Ngày sinh" value={<FormWrapDatePicker name="dateOfBirth" />} />
-			<TextField title="Giới tính" value={genderRadio} />
-			<TextField title="Số CMND/CCCD" value={<FormWrapInput name="idCardNumber" />} />
-			<TextField title="Ngày cấp" value={<FormWrapDatePicker name="idCardStartDate" />} />
-			<TextField title="Nơi cấp" value={<FormWrapInput name="idCardAddress" />} />
-			<TextField title="Quốc tịch" value={<FormWrapSelect name="country" />} />
-		</>
-	);
-};
-
-const BottomRight: React.FC<{ isIndividual: boolean }> = ({ isIndividual }) => {
-	return isIndividual ? (
-		<>
-			<TextField title="Email" value={<FormWrapInput name="email" />} />
-			<TextField title="Tên đăng nhập" value={<FormWrapInput name="username" />} />
-			<TextField title="Mật khẩu" value={<FormWrapInput name="password" />} />
-			<TextField title="Số tài khoản" value={<FormWrapInput name="bankNumber" />} />
-			<TextField title="Ngân hàng" value={<FormWrapInput name="bankName" />} />
-		</>
-	) : (
-		<>
-			<TextField title="Nơi cư trú" value={<FormWrapTextArea name="address" />} />
-			<TextField title="Số điện thoại" value={<FormWrapInput name="phone" />} />
-			<TextField title="Email" value={<FormWrapInput name="email" />} />
-			<TextField title="Tên đăng nhập" value={<FormWrapInput name="username" />} />
-			<TextField title="Mật khẩu" value={<FormWrapInput name="password" />} />
-		</>
-	);
-};

@@ -1,0 +1,9 @@
+.text {
+	color: var(--text-orange);
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.text:hover {
+	filter: grayscale(0.1);
+}

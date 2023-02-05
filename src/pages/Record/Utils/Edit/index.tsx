@@ -10,7 +10,7 @@ const RecordEditPage = () => {
 		<LayoutPage
 			heading={`Bản ghi - ${"Name"}`}
 			breadcrumbData={[
-				{ name: "Bản ghi", path: "?" },
+				{ name: "Bản ghi", path: "/record" },
 				{ name: "Cập nhật thông tin", path: "/record/edit" },
 			]}
 			quickButtonData={[{ description: "Xóa bản ghi", onClick: () => {} }]}>

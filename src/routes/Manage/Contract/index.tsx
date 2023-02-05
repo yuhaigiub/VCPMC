@@ -18,7 +18,7 @@ const ContractRoute = () => {
 			<Route element={<LayoutWithoutMenu />}>
 				<Route path="authorize">
 					<Route path="detail" element={<ContractAuthorizeDetailPage />} />
-					<Route path="edit" element={<ContractAuthorizeEditPage />} />
+					<Route path="edit/:key" element={<ContractAuthorizeEditPage />} />
 					<Route path="add" element={<ContractAuthorizeAddPage />} />
 				</Route>
 				<Route path="exploit"></Route>

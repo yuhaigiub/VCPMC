@@ -6,7 +6,7 @@ import { RoleTable } from "../../types/data";
 export const getAllRoles = createAsyncThunk("roles/getAllRoles", async () => {
 	const querySnapshot = await getDocs(collection(db, "roles"));
 	const results = querySnapshot.docs.map((doc) => {
-		return { id: doc.id, ...doc.data() } as RoleTable;
+		return { key: doc.id, ...doc.data() } as RoleTable;
 	});
 
 	return results;
