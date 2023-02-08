@@ -23,7 +23,7 @@
 .containerRight {
 	display: flex;
 	flex-direction: column;
-	gap: 1em;
+	gap: 2em;
 }
 
 .title {
@@ -32,7 +32,7 @@
 }
 
 .titleTop {
-	font-size: 1em;
+	font-size: 1rem;
 	font-weight: 700;
 	margin-bottom: 0.5em;
 }

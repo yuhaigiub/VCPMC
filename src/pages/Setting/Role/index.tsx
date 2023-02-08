@@ -36,7 +36,7 @@ const RolePage = () => {
 			{
 				description: "Thêm vai trò",
 				onClick: () => {
-					navigate("setting/role/role/add");
+					navigate("/setting/role/role/add");
 				},
 			},
 		];
@@ -52,7 +52,12 @@ const RolePage = () => {
 			quickButtonData={quickButtonData}>
 			<div className={style.container}>
 				<div className={style.searchContainer}>
-					<TabButtons left={left} setLeft={setLeft} />
+					<TabButtons
+						left={left}
+						setLeft={setLeft}
+						leftLabel="Danh sách người dùng"
+						rightLabel="Danh sách vai trò"
+					/>
 					<Input style={{ width: "20em" }} />
 				</div>
 				{left ? <RoleUserList /> : <RoleRoleList />}

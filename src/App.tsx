@@ -2,7 +2,7 @@ import React from "react";
 
 import { Routes, Route } from "react-router-dom";
 
-import Home from "./pages/Home";
+import LoginPage from "./pages/Login";
 import CompanyRoute from "./routes/Manage/Company";
 import ContractRoute from "./routes/Manage/Contract";
 import DeviceRoute from "./routes/Manage/Device";
@@ -21,7 +21,7 @@ const App = () => {
 	return (
 		<Routes>
 			<Route path="/">
-				<Route index element={<Home />} />
+				<Route index element={<LoginPage />} />
 				<Route path="profile/*" element={<ProfileRoute />} />
 				<Route path="record/*" element={<RecordRoute />} />
 				<Route path="playlist/*" element={<PlaylistRoute />} />

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { UserTable } from "../../types/data";
-import { addUser, getAllUsers, updateUser } from "./reducers";
+import { addUser, getAllUsers, overrideUser } from "./reducers";
 
 const initialState: DataType = {
 	data: [],
@@ -18,7 +18,7 @@ const usersSlice = createSlice({
 			.addCase(addUser.fulfilled, (state, action) => {
 				state.data = [...state.data, action.payload];
 			})
-			.addCase(updateUser.fulfilled, (state, action) => {
+			.addCase(overrideUser.fulfilled, (state, action) => {
 				state.data = state.data.map((user) => {
 					if (user.key !== action.payload.key) {
 						return user;

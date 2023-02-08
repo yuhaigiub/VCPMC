@@ -2,6 +2,7 @@
 	display: grid;
 	grid-template-columns: 1fr 2fr;
 	gap: 5em;
+	margin-bottom: 2em;
 }
 
 .title {

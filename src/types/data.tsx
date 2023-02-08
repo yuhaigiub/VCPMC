@@ -17,13 +17,14 @@ export interface RoleTable {
 export interface UserTable {
 	key: string;
 	email: string;
-	expireDate: Date;
+	dateExpired: Date;
 	fullname: string;
 	isActive: boolean;
 	password: string;
 	roleId: string;
 	username: string;
 	gender: "male" | "female";
+	phone: string;
 }
 
 export interface GerneTable {
@@ -46,4 +47,12 @@ export interface ContractTable {
 	dateCreated: Date;
 	dateExpired: Date;
 	userId: string;
+}
+
+export interface PlaylistTable {
+	key: string;
+	name: string;
+	description: string;
+	records: string[];
+	dateCreated: Date;
 }

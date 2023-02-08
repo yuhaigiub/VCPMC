@@ -21,14 +21,14 @@ store.dispatch(getAllGernes());
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<React.StrictMode>
-		<Provider store={store}>
-			<AuthProvider>
+		<AuthProvider>
+			<Provider store={store}>
 				<BrowserRouter>
 					<ConfigProvider theme={AntdTheme}>
 						<App />
 					</ConfigProvider>
 				</BrowserRouter>
-			</AuthProvider>
-		</Provider>
+			</Provider>
+		</AuthProvider>
 	</React.StrictMode>
 );

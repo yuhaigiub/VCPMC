@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { ContractTable } from "../../types/data";
-import { addContract, getAllContracts, updateContract } from "./reducers";
+import { addContract, getAllContracts, overrideContract } from "./reducers";
 
 const initialState: DataType = {
 	data: [],
@@ -18,7 +18,7 @@ const contractsSlice = createSlice({
 			.addCase(addContract.fulfilled, (state, action) => {
 				state.data = [...state.data, action.payload];
 			})
-			.addCase(updateContract.fulfilled, (state, action) => {
+			.addCase(overrideContract.fulfilled, (state, action) => {
 				state.data = state.data.map((contract) => {
 					if (contract.key !== action.payload.key) {
 						return contract;

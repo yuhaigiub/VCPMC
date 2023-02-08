@@ -2,9 +2,8 @@ import React from "react";
 import style from "./RoleRoleAddPage.module.css";
 
 import { Checkbox, Input } from "antd";
-
-import TextField from "../../../../../../components/custom/TextField";
 import LayoutPage from "../../../../../../components/Layouts/Page/LayoutPage";
+import TwoButtonsWrapper from "../../../../../../components/static/TwoButtonsWrapper";
 
 const RoleRoleAddPage = () => {
 	return (
@@ -23,7 +22,7 @@ const RoleRoleAddPage = () => {
 					</div>
 					<div className={style.fieldContainer}>
 						<div className={style.title}>Mô tả:</div>
-						<Input.TextArea autoSize={{ minRows: 3, maxRows: 5 }} />
+						<Input.TextArea autoSize={{ minRows: 15, maxRows: 15 }} />
 					</div>
 				</div>
 				<div className={`${style.rightContainer} ${style.fieldContainer}`}>
@@ -44,6 +43,7 @@ const RoleRoleAddPage = () => {
 					</div>
 				</div>
 			</div>
+			<TwoButtonsWrapper />
 		</LayoutPage>
 	);
 };

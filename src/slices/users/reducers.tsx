@@ -37,6 +37,19 @@ export const getUserByUsername = createAsyncThunk(
 	}
 );
 
+export const getUserByEmail = createAsyncThunk("users/getUserByEmail", async (email: string) => {
+	const q = query(collection(db, "users"), where("email", "==", email));
+	const querySnapshot = await getDocs(q);
+	if (querySnapshot.docs.length !== 0) {
+		return {
+			...querySnapshot.docs[0].data(),
+			key: querySnapshot.docs[0].id,
+		} as UserTable;
+	} else {
+		return null;
+	}
+});
+
 export const addUser = createAsyncThunk("users/addUser", async (data: UserTable) => {
 	const { key, ...document } = data;
 	const docRef = await addDoc(collection(db, "users"), {
@@ -45,7 +58,7 @@ export const addUser = createAsyncThunk("users/addUser", async (data: UserTable)
 	return { ...document, key: docRef.id } as UserTable;
 });
 
-export const updateUser = createAsyncThunk("users/updateUser", async (data: UserTable) => {
+export const overrideUser = createAsyncThunk("users/updateUser", async (data: UserTable) => {
 	const { key, ...document } = data;
 	const docRef = doc(db, "users", key);
 	await setDoc(docRef, {

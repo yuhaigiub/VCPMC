@@ -1,5 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { addDoc, collection, doc, getDocs, query, where } from "firebase/firestore";
+import {
+	addDoc,
+	collection,
+	doc,
+	getDoc,
+	getDocs,
+	query,
+	updateDoc,
+	where,
+} from "firebase/firestore";
 import { db } from "../../app/firebaseConfig";
 import { RecordTable } from "../../types/data";
 
@@ -21,7 +30,7 @@ export const addRecord = createAsyncThunk("records/addRecord", async (data: Reco
 });
 
 export const getRecordfromContractId = createAsyncThunk(
-	"records/getRecord",
+	"records/getRecordfromContractId",
 	async (contractId: string) => {
 		const q = query(collection(db, "records"), where("contractId", "==", contractId));
 		const querySnapshot = await getDocs(q);
@@ -33,5 +42,31 @@ export const getRecordfromContractId = createAsyncThunk(
 		} else {
 			return null;
 		}
+	}
+);
+
+export const getRecord = createAsyncThunk("records/getRecord", async (id: string) => {
+	const docRef = doc(db, "records", id);
+	const docSnapshot = await getDoc(docRef);
+	if (docSnapshot.exists()) {
+		const rawData = docSnapshot.data();
+		return {
+			...rawData,
+			key: id,
+			time: parseInt(rawData.time),
+		} as RecordTable;
+	} else {
+		return null;
+	}
+});
+
+export const updateRecord = createAsyncThunk(
+	"records/updateRecord",
+	async ({ id, data }: { id: string; data: any }) => {
+		const docRef = doc(db, "records", id);
+		await updateDoc(docRef, {
+			...data,
+		});
+		return { modifiedKey: id, ...data };
 	}
 );

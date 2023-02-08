@@ -5,6 +5,7 @@ import roles from "../slices/roles/slice";
 import contracts from "../slices/contracts/slice";
 import gernes from "../slices/gernes/slice";
 import users from "../slices/users/slice";
+import playlists from "../slices/playlists/slice";
 
 const store = configureStore({
 	reducer: {
@@ -13,6 +14,7 @@ const store = configureStore({
 		contracts,
 		gernes,
 		users,
+		playlists,
 	},
 	middleware: (getDefaultMiddleware) =>
 		getDefaultMiddleware({

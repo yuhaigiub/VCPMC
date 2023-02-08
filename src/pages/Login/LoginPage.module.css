@@ -1,0 +1,50 @@
+.container {
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--background-black);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 10vh;
+	gap: 1em;
+}
+
+.image {
+	width: 10%;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	background-color: palevioletred;
+}
+
+.form {
+	width: 25%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.title {
+	color: white;
+	font-size: 2rem;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 0.5em;
+}
+
+.button {
+	max-width: 200px;
+	padding: 0.75em 2em;
+	font-size: 1rem;
+	color: white;
+	background-color: var(--text-orange);
+	border: none;
+	border-radius: 9px;
+	margin-top: 2em;
+	cursor: pointer;
+	transition: scale 300ms;
+}
+
+.button:hover {
+	filter: brightness(0.95);
+	scale: 1.1;
+}

@@ -9,12 +9,12 @@ import TwoButtonsWrapper from "../../../../../../components/static/TwoButtonsWra
 import SelectWithCustomTags from "../../../../../../components/static/SelectWithCustomTags";
 import { ContractTable, UserTable } from "../../../../../../types/data";
 import { useAppDispatch, useAppSelector } from "../../../../../../app/store";
-import { getContract, updateContract } from "../../../../../../slices/contracts/reducers";
+import { getContract, overrideContract } from "../../../../../../slices/contracts/reducers";
 import { useNavigate, useParams } from "react-router-dom";
 import dayjs from "dayjs";
 import { getRecordfromContractId } from "../../../../../../slices/records/reducers";
 import { getAllGernesQuery } from "../../../../../../slices/gernes/selectors";
-import { getUser, getUserByUsername, updateUser } from "../../../../../../slices/users/reducers";
+import { getUser, getUserByUsername, overrideUser } from "../../../../../../slices/users/reducers";
 
 const ContractAuthorizeEditPage = () => {
 	const navigate = useNavigate();
@@ -89,7 +89,7 @@ const ContractAuthorizeEditPage = () => {
 									dateExpired: values.dateExpired.toDate(),
 									userId: user.key,
 								};
-								dispatch(updateContract(contractData))
+								dispatch(overrideContract(contractData))
 									.unwrap()
 									.then((contract) => {
 										navigate(-1);

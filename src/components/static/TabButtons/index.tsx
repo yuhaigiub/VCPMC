@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./TabButtons.module.css";
 
-const TabButtons: React.FC<Props> = ({ left, setLeft }) => {
+const TabButtons: React.FC<Props> = ({ left, setLeft, leftLabel = "", rightLabel = "" }) => {
 	return (
 		<div className={style.tabContainer}>
 			<div
@@ -9,14 +9,14 @@ const TabButtons: React.FC<Props> = ({ left, setLeft }) => {
 					setLeft(true);
 				}}
 				className={`${style.tab} ${left ? style.tabActive : ""}`}>
-				Hợp đồng ủy quyền
+				{leftLabel}
 			</div>
 			<div
 				onClick={() => {
 					setLeft(false);
 				}}
 				className={`${style.tab} ${!left ? style.tabActive : ""}`}>
-				Hợp đồng khai thác
+				{rightLabel}
 			</div>
 		</div>
 	);
@@ -27,4 +27,6 @@ export default TabButtons;
 interface Props {
 	left: boolean;
 	setLeft: React.Dispatch<React.SetStateAction<boolean>>;
+	leftLabel?: string;
+	rightLabel?: string;
 }

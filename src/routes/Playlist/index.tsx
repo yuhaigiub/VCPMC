@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import LayoutWithMenu from "../../components/Layouts/NonPage/LayoutWithMenu";
 import LayoutWithoutMenu from "../../components/Layouts/NonPage/LayoutWithoutMenu";
 import PlaylistPage from "../../pages/Playlist";
-import AddPlaylistPage from "../../pages/Playlist/Utils/AddPlaylist";
+import AddPlaylistPage from "../../pages/Playlist/Utils/Add";
 
 const PlaylistRoute = () => {
 	return (

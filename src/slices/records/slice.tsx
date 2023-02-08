@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RecordTable } from "../../types/data";
-import { addRecord, getAllRecords } from "./reducers";
+import { addRecord, getAllRecords, updateRecord } from "./reducers";
 
 const initialState: DataType = {
 	data: [],
@@ -17,6 +17,15 @@ const accountsSlice = createSlice({
 			})
 			.addCase(addRecord.fulfilled, (state, action) => {
 				state.data = [...state.data, action.payload];
+			})
+			.addCase(updateRecord.fulfilled, (state, action) => {
+				const { modifiedKey, ...data } = action.payload;
+				state.data = state.data.map((record) => {
+					if (record.key !== modifiedKey) {
+						return record;
+					}
+					return { ...record, ...data };
+				});
 			});
 	},
 });

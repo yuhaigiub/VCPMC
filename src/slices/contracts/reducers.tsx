@@ -45,8 +45,8 @@ export const getContract = createAsyncThunk("contracts/getContract", async (id: 
 	}
 });
 
-export const updateContract = createAsyncThunk(
-	"contracts/updateContract",
+export const overrideContract = createAsyncThunk(
+	"contracts/overrideContract",
 	async (data: ContractTable) => {
 		const { key, ...document } = data;
 		const docRef = doc(db, "contracts", key);
