@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from "react";
 import style from "./ProfilePage.module.css";
 
-import { Input, Form } from "antd";
+import { Input, Form, Select } from "antd";
 
 import LayoutPage from "../../components/Layouts/Page/LayoutPage";
 import { useAuth } from "../../app/AuthContext";
-import { useAppDispatch } from "../../app/store";
-import { getUserByEmail } from "../../slices/users/reducers";
+import { useAppDispatch, useAppSelector } from "../../app/store";
+import { getUserByEmail, updateUser } from "../../slices/users/reducers";
 import { UserTable } from "../../types/data";
 import { getRole } from "../../slices/roles/reducers";
+import { getAllRolesQuery } from "../../slices/roles/selectors";
 
 const ProfilePage = () => {
 	const [form] = Form.useForm();
 	const dispatch = useAppDispatch();
 	const authContext = useAuth();
 	const currentUser = authContext.currentUser;
+
+	const rolesList = useAppSelector(getAllRolesQuery);
+
 	const [edit, setEdit] = useState<boolean>(false);
 	const [data, setData] = useState<UserTable>({
 		key: "",
@@ -41,7 +45,7 @@ const ProfilePage = () => {
 								if (role !== null) {
 									form.setFieldsValue({
 										fullname: user.fullname,
-										gender: user.gender === "male" ? "Nam" : "Nữ",
+										gender: user.gender,
 										phone: user.phone,
 										email: user.email,
 										username: user.username,
@@ -68,7 +72,21 @@ const ProfilePage = () => {
 				{ description: "Đổi mật khẩu", onClick: () => {} },
 				{ description: "Đăng xuất", onClick: () => {} },
 			]}>
-			<Form className={style.container} form={form}>
+			<Form
+				className={style.container}
+				form={form}
+				onFinish={(values) => {
+					console.log(values);
+					authContext.editEmail(values.email).then((res: any) => {
+						authContext.editPassword(values.password).then((res: any) => {
+							dispatch(updateUser({ id: data.key, data: values }))
+								.unwrap()
+								.then((updatedUser) => {
+									setEdit((value) => !value);
+								});
+						});
+					});
+				}}>
 				<div className={style.leftContainer}>
 					<div className={style.image}>
 						<div className={style.chooseImgButton}></div>
@@ -85,7 +103,13 @@ const ProfilePage = () => {
 					<div className={style.field}>
 						<div className={style.label}>Giới tính:</div>
 						<Form.Item name="gender" noStyle>
-							<Input disabled={!edit} />
+							<Select
+								disabled={!edit}
+								options={[
+									{ label: "Nam", value: "male" },
+									{ label: "Nữ", value: "female" },
+								]}
+							/>
 						</Form.Item>
 					</div>
 					<div className={style.field}>
@@ -109,7 +133,12 @@ const ProfilePage = () => {
 					<div className={style.field}>
 						<div className={style.label}>Phân quyền:</div>
 						<Form.Item name="role" noStyle>
-							<Input disabled={!edit} />
+							<Select
+								disabled={!edit}
+								options={rolesList.map((role) => {
+									return { label: role.name, value: role.key };
+								})}
+							/>
 						</Form.Item>
 					</div>
 					{edit ? (

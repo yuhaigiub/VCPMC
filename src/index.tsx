@@ -6,8 +6,8 @@ import { AntdTheme } from "./constants/theme-setup";
 import { ConfigProvider } from "antd";
 import { BrowserRouter } from "react-router-dom";
 import AuthProvider from "./app/AuthContext";
-import store from "./app/store";
 import { Provider } from "react-redux";
+import store from "./app/store";
 
 import App from "./App";
 import { getAllRoles } from "./slices/roles/reducers";

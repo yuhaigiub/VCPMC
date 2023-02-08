@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { collection, getDocs, doc, getDoc, query, where, setDoc, addDoc } from "firebase/firestore";
+import { collection, getDocs, doc, getDoc, query, where, setDoc, addDoc, updateDoc } from "firebase/firestore";
 import { db } from "../../app/firebaseConfig";
 import { UserTable } from "../../types/data";
 
@@ -58,7 +58,7 @@ export const addUser = createAsyncThunk("users/addUser", async (data: UserTable)
 	return { ...document, key: docRef.id } as UserTable;
 });
 
-export const overrideUser = createAsyncThunk("users/updateUser", async (data: UserTable) => {
+export const overrideUser = createAsyncThunk("users/overrideUser", async (data: UserTable) => {
 	const { key, ...document } = data;
 	const docRef = doc(db, "users", key);
 	await setDoc(docRef, {
@@ -67,3 +67,14 @@ export const overrideUser = createAsyncThunk("users/updateUser", async (data: Us
 
 	return data;
 });
+
+export const updateUser = createAsyncThunk(
+	"users/updateUser",
+	async ({ id, data }: { id: string; data: any }) => {
+		const docRef = doc(db, "users", id);
+		await updateDoc(docRef, {
+			...data,
+		});
+		return { modifiedKey: id, ...data };
+	}
+);
